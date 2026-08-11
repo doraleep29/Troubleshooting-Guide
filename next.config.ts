@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
-// Deliberately minimal — this app has exactly one job: embed the ops
-// workspace's /support/troubleshoot page in a full-viewport iframe. All
-// real logic/content lives in doraleep29/Carbinox.workspace.com.
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    // Watch model photos are served from Shopify's product-media CDN
+    // (confirmed URLs, see lib/content.ts).
+    remotePatterns: [{ protocol: "https", hostname: "cdn.shopify.com" }],
+  },
+};
 
 export default nextConfig;
