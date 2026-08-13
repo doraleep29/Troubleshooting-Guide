@@ -21,18 +21,28 @@ from the model manuals and the live
 database or admin UI by design — updating content means editing those
 files and deploying, same as any other code change.
 
-Real manual diagrams live under `public/manuals/<model-slug>/*.png` and are
-wired to steps via a `visualSlot` (e.g. `chargingAlignment`, `restart`,
-`pairingApp`) resolved per selected watch through
+Diagrams are wired to steps via a `visualSlot` (e.g. `chargingAlignment`,
+`chargingPort`, `restart`, `pairingApp`) resolved per selected watch through
 `getStepVisual()` in `lib/troubleshooting/issues.ts` — the same step data is
 shared across every model, but each model supplies its own diagrams via
 `manualVisuals`. A model with no diagram yet for a given slot shows an
 honest "not added yet" placeholder rather than borrowing another model's
-image. All 5 models are populated: Vortex, Blaze Type R, Blaze Type S, Edge
-(both colorways, shares one set of diagrams since the manual doesn't differ
-by color), and X-Ranger. X-Ranger's manual has no dedicated gestures or
-firmware-update section, so those two slots are intentionally left unset
-for it rather than filled with unrelated content.
+image. Two image sources exist side by side:
+
+- `public/troubleshooting-diagrams/<model-slug>/*.png` — clean, transparent-
+  background recreations (used for `buttonLayout`, `chargingAlignment`,
+  `chargingPort`, `restart` on most models). Preferred where available.
+- `public/manuals/<model-slug>/*.png` — raw crops from the real manual pages
+  (used for `pairingApp`, `gestures`, `otaUpdate`, `bluetoothCalling`, and
+  X-Ranger's charging slots specifically — see below).
+
+X-Ranger's manual has no dedicated gestures or firmware-update section, so
+those two slots are intentionally left unset. X-Ranger's recreated charging
+diagrams also had fabricated case-back engraving ("Designed in Germany", a
+made-up serial number) that contradicts the real manual ("Assembled in
+China"), so its `chargingAlignment`/`chargingPort` still point at the raw
+manual crop until a corrected recreation exists — never swap those back to
+the recreated pack without checking the engraved text first.
 
 ## Routing
 

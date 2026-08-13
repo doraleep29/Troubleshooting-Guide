@@ -11,6 +11,7 @@ export type WatchCaseShape = "SQUARE" | "ROUND";
 export type ManualVisualSlot =
   | "buttonLayout"
   | "chargingAlignment"
+  | "chargingPort"
   | "pairingApp"
   | "restart"
   | "gestures"
@@ -60,16 +61,17 @@ const EDGE_SHARED = {
   accentColor: "#FF9F1C",
   groupKey: "edge",
   groupName: "Edge",
-  // Cropped directly from the real Carbinox Edge manual — identical for
-  // both color variants since the manual doesn't differ by color. Edge
-  // documents its buttons via a labeled table rather than a separate
-  // restart illustration, so "restart" reuses the same table crop as
-  // "buttonLayout" (its SEL-button row is the restart instruction).
+  // buttonLayout/chargingAlignment/chargingPort/restart use the clean
+  // recreated transparent-background diagrams (verified against the real
+  // manual); pairingApp/gestures/otaUpdate/bluetoothCalling still use the
+  // raw manual-page crops until those get the same treatment. Identical for
+  // both Edge color variants since the manual doesn't differ by color.
   manualVisuals: {
-    buttonLayout: "/manuals/edge/button-layout.png",
-    chargingAlignment: "/manuals/edge/charging-alignment.png",
+    buttonLayout: "/troubleshooting-diagrams/edge/physical-buttons-and-ports.png",
+    chargingAlignment: "/troubleshooting-diagrams/edge/charging-connection-correct.png",
+    chargingPort: "/troubleshooting-diagrams/edge/charging-port.png",
+    restart: "/troubleshooting-diagrams/edge/force-restart.png",
     pairingApp: "/manuals/edge/pairing-app.png",
-    restart: "/manuals/edge/restart.png",
     gestures: "/manuals/edge/gestures.png",
     bluetoothCalling: "/manuals/edge/bluetooth-calling.png",
     otaUpdate: "/manuals/edge/ota-update.png",
@@ -116,12 +118,12 @@ export const WATCH_MODELS: WatchModel[] = [
     accentColor: "#FF6A1A",
     imageUrl: "/watches/blaze-type-r.png",
     ...BLAZE_SHARED,
-    // Cropped directly from the real Carbinox Blaze Type R manual.
     manualVisuals: {
-      buttonLayout: "/manuals/blaze-r/button-layout.png",
-      chargingAlignment: "/manuals/blaze-r/charging-alignment.png",
+      buttonLayout: "/troubleshooting-diagrams/blaze-r/physical-buttons-and-ports.png",
+      chargingAlignment: "/troubleshooting-diagrams/blaze-r/charging-connection-correct.png",
+      chargingPort: "/troubleshooting-diagrams/blaze-r/charging-port.png",
+      restart: "/troubleshooting-diagrams/blaze-r/force-restart.png",
       pairingApp: "/manuals/blaze-r/pairing-app.png",
-      restart: "/manuals/blaze-r/restart.png",
       gestures: "/manuals/blaze-r/gestures.png",
       otaUpdate: "/manuals/blaze-r/ota-update.png",
       bluetoothCalling: "/manuals/blaze-r/bluetooth-calling.png",
@@ -137,12 +139,12 @@ export const WATCH_MODELS: WatchModel[] = [
     accentColor: "#E8352B",
     imageUrl: "/watches/blaze-type-s.png",
     ...BLAZE_SHARED,
-    // Cropped directly from the real Carbinox Blaze Type S manual.
     manualVisuals: {
-      buttonLayout: "/manuals/blaze-s/button-layout.png",
-      chargingAlignment: "/manuals/blaze-s/charging-alignment.png",
+      buttonLayout: "/troubleshooting-diagrams/blaze-s/physical-buttons-and-ports.png",
+      chargingAlignment: "/troubleshooting-diagrams/blaze-s/charging-connection-correct.png",
+      chargingPort: "/troubleshooting-diagrams/blaze-s/charging-port.png",
+      restart: "/troubleshooting-diagrams/blaze-s/force-restart.png",
       pairingApp: "/manuals/blaze-s/pairing-app.png",
-      restart: "/manuals/blaze-s/restart.png",
       gestures: "/manuals/blaze-s/gestures.png",
       otaUpdate: "/manuals/blaze-s/ota-update.png",
       bluetoothCalling: "/manuals/blaze-s/bluetooth-calling.png",
@@ -164,12 +166,12 @@ export const WATCH_MODELS: WatchModel[] = [
     groupKey: "vortex",
     groupName: "Vortex",
     variantName: "Vortex",
-    // Cropped directly from the real Carbinox Vortex manual.
     manualVisuals: {
-      buttonLayout: "/manuals/vortex/button-layout.png",
-      chargingAlignment: "/manuals/vortex/charging-alignment.png",
+      buttonLayout: "/troubleshooting-diagrams/vortex/physical-buttons-and-ports.png",
+      chargingAlignment: "/troubleshooting-diagrams/vortex/charging-connection-correct.png",
+      chargingPort: "/troubleshooting-diagrams/vortex/charging-port.png",
+      restart: "/troubleshooting-diagrams/vortex/force-restart.png",
       pairingApp: "/manuals/vortex/pairing-app.png",
-      restart: "/manuals/vortex/restart.png",
       gestures: "/manuals/vortex/gestures.png",
       otaUpdate: "/manuals/vortex/ota-update.png",
       bluetoothCalling: "/manuals/vortex/bluetooth-calling.png",
@@ -191,15 +193,20 @@ export const WATCH_MODELS: WatchModel[] = [
     groupKey: "x_ranger",
     groupName: "X-Ranger",
     variantName: "X-Ranger",
-    // Cropped directly from the real Carbinox X-Ranger manual. This manual
-    // has no dedicated gestures or firmware-update section (structured
-    // around Audio Settings / Watch Faces / Sports Modes instead), so those
-    // two slots are left unset rather than filled with unrelated content.
+    // This manual has no dedicated gestures or firmware-update section
+    // (structured around Audio Settings / Watch Faces / Sports Modes
+    // instead), so those two slots are left unset. chargingAlignment/
+    // chargingPort intentionally still use the raw manual crop, not the
+    // recreated diagram pack — that pack's X-Ranger charging assets have
+    // fabricated case-back engraving ("Designed in Germany", a made-up
+    // serial number) contradicting the real manual's "Assembled in China" —
+    // swap these in once a corrected version exists.
     manualVisuals: {
-      buttonLayout: "/manuals/x-ranger/button-layout.png",
+      buttonLayout: "/troubleshooting-diagrams/x-ranger/physical-buttons-and-ports.png",
       chargingAlignment: "/manuals/x-ranger/charging-alignment.png",
+      chargingPort: "/manuals/x-ranger/charging-alignment.png",
+      restart: "/troubleshooting-diagrams/x-ranger/force-restart.png",
       pairingApp: "/manuals/x-ranger/pairing-app.png",
-      restart: "/manuals/x-ranger/restart.png",
       bluetoothCalling: "/manuals/x-ranger/bluetooth-calling.png",
     },
   },

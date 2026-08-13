@@ -24,7 +24,7 @@ export function InstructionVisualPanel({
               <Image src={visual.src} alt={visual.alt} fill className="object-contain" sizes="(max-width: 1199px) 90vw, 500px" />
             </div>
             <div className="mt-2 text-center text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase group-hover:text-[var(--support-red)]">
-              From the manual — tap to enlarge
+              Tap to enlarge
             </div>
           </button>
         </>

@@ -28,6 +28,7 @@ export interface TroubleshootingIssue {
 export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   buttonLayout: "Physical buttons & ports",
   chargingAlignment: "Proper charging connection",
+  chargingPort: "Inspect the charging port",
   pairingApp: "Pairing with the app",
   restart: "Force restart",
   gestures: "Watch gestures",
@@ -81,7 +82,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Wipe the charging pins on the back of the watch and on the base with a dry cloth, and make sure the watch is seated with the metal contacts aligned directly to the base.",
         ],
-        visualSlot: "chargingAlignment",
+        visualSlot: "chargingPort",
         additionalHelp: [
           {
             title: "Charging pins dirty?",
