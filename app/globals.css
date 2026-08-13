@@ -25,3 +25,64 @@
   letter-spacing: 0.01em;
   line-height: 1.1;
 }
+
+/* Three-column FIX-screen workspace. Named grid areas let the same 4
+   panels (watch / steps / visual / feedback) reflow per breakpoint without
+   duplicating markup — mobile stacks linearly, tablet is 2-column with
+   steps+visual+feedback stacked on the right, desktop is the full 3-column
+   layout with feedback nested under steps in the center column. */
+.troubleshooting-workspace {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "watch"
+    "steps"
+    "visual"
+    "feedback";
+  align-items: start;
+  margin: 20px auto 40px;
+}
+
+.tw-watch {
+  grid-area: watch;
+}
+.tw-steps {
+  grid-area: steps;
+}
+.tw-visual {
+  grid-area: visual;
+}
+.tw-feedback {
+  grid-area: feedback;
+}
+
+@media (min-width: 768px) {
+  .troubleshooting-workspace {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "watch steps"
+      "watch visual"
+      "watch feedback";
+  }
+}
+
+@media (min-width: 1200px) {
+  .troubleshooting-workspace {
+    width: min(1440px, calc(100% - 48px));
+    grid-template-columns: 290px minmax(440px, 1fr) minmax(540px, 1.25fr);
+    grid-template-areas:
+      "watch steps visual"
+      "watch feedback visual";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,13 +1,16 @@
-import type { WatchModel } from "@/lib/content";
+import type { WatchModel } from "@/lib/troubleshooting/models";
 
 const PLACEHOLDER_PATTERN = /\{\{(restartInstructions|waterGuidance|companionApp)\}\}/g;
 
 /**
- * Fills a step's `{{restartInstructions}}` / `{{waterGuidance}}` /
- * `{{companionApp}}` placeholders with the selected watch model's fields, so
- * one step body can cover all 5 models instead of duplicating near-identical
- * text per model.
+ * Fills `{{restartInstructions}}` / `{{waterGuidance}}` / `{{companionApp}}`
+ * placeholders with the selected watch model's fields, so one instruction
+ * line can cover all models instead of duplicating near-identical text.
  */
-export function interpolateStepBody(body: string, watch: WatchModel): string {
-  return body.replace(PLACEHOLDER_PATTERN, (_match, key: keyof WatchModel) => String(watch[key]));
+export function interpolateText(text: string, watch: WatchModel): string {
+  return text.replace(PLACEHOLDER_PATTERN, (_match, key: keyof WatchModel) => String(watch[key]));
+}
+
+export function interpolateInstructions(instructions: string[], watch: WatchModel): string[] {
+  return instructions.map((line) => interpolateText(line, watch));
 }
