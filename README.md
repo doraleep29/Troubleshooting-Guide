@@ -28,9 +28,11 @@ wired to steps via a `visualSlot` (e.g. `chargingAlignment`, `restart`,
 shared across every model, but each model supplies its own diagrams via
 `manualVisuals`. A model with no diagram yet for a given slot shows an
 honest "not added yet" placeholder rather than borrowing another model's
-image. Currently populated: **Vortex** and **Blaze Type R**. Edge (both
-colorways), Blaze Type S, and X-Ranger still need their manual diagrams
-processed.
+image. All 5 models are populated: Vortex, Blaze Type R, Blaze Type S, Edge
+(both colorways, shares one set of diagrams since the manual doesn't differ
+by color), and X-Ranger. X-Ranger's manual has no dedicated gestures or
+firmware-update section, so those two slots are intentionally left unset
+for it rather than filled with unrelated content.
 
 ## Routing
 

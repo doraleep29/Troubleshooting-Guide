@@ -60,6 +60,20 @@ const EDGE_SHARED = {
   accentColor: "#FF9F1C",
   groupKey: "edge",
   groupName: "Edge",
+  // Cropped directly from the real Carbinox Edge manual — identical for
+  // both color variants since the manual doesn't differ by color. Edge
+  // documents its buttons via a labeled table rather than a separate
+  // restart illustration, so "restart" reuses the same table crop as
+  // "buttonLayout" (its SEL-button row is the restart instruction).
+  manualVisuals: {
+    buttonLayout: "/manuals/edge/button-layout.png",
+    chargingAlignment: "/manuals/edge/charging-alignment.png",
+    pairingApp: "/manuals/edge/pairing-app.png",
+    restart: "/manuals/edge/restart.png",
+    gestures: "/manuals/edge/gestures.png",
+    bluetoothCalling: "/manuals/edge/bluetooth-calling.png",
+    otaUpdate: "/manuals/edge/ota-update.png",
+  },
 };
 
 // Blaze ships as two distinct case shapes (Type R round, Type S square) —
@@ -123,6 +137,16 @@ export const WATCH_MODELS: WatchModel[] = [
     accentColor: "#E8352B",
     imageUrl: "/watches/blaze-type-s.png",
     ...BLAZE_SHARED,
+    // Cropped directly from the real Carbinox Blaze Type S manual.
+    manualVisuals: {
+      buttonLayout: "/manuals/blaze-s/button-layout.png",
+      chargingAlignment: "/manuals/blaze-s/charging-alignment.png",
+      pairingApp: "/manuals/blaze-s/pairing-app.png",
+      restart: "/manuals/blaze-s/restart.png",
+      gestures: "/manuals/blaze-s/gestures.png",
+      otaUpdate: "/manuals/blaze-s/ota-update.png",
+      bluetoothCalling: "/manuals/blaze-s/bluetooth-calling.png",
+    },
   },
   {
     key: "vortex",
@@ -148,6 +172,7 @@ export const WATCH_MODELS: WatchModel[] = [
       restart: "/manuals/vortex/restart.png",
       gestures: "/manuals/vortex/gestures.png",
       otaUpdate: "/manuals/vortex/ota-update.png",
+      bluetoothCalling: "/manuals/vortex/bluetooth-calling.png",
     },
   },
   {
@@ -166,6 +191,17 @@ export const WATCH_MODELS: WatchModel[] = [
     groupKey: "x_ranger",
     groupName: "X-Ranger",
     variantName: "X-Ranger",
+    // Cropped directly from the real Carbinox X-Ranger manual. This manual
+    // has no dedicated gestures or firmware-update section (structured
+    // around Audio Settings / Watch Faces / Sports Modes instead), so those
+    // two slots are left unset rather than filled with unrelated content.
+    manualVisuals: {
+      buttonLayout: "/manuals/x-ranger/button-layout.png",
+      chargingAlignment: "/manuals/x-ranger/charging-alignment.png",
+      pairingApp: "/manuals/x-ranger/pairing-app.png",
+      restart: "/manuals/x-ranger/restart.png",
+      bluetoothCalling: "/manuals/x-ranger/bluetooth-calling.png",
+    },
   },
 ];
 
