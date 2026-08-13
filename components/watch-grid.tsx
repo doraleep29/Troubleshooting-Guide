@@ -11,7 +11,7 @@ export function WatchGrid({ watchModels, onSelect }: { watchModels: WatchModel[]
           key={watch.key}
           type="button"
           onClick={() => onSelect(watch.key)}
-          className="group flex flex-col items-center rounded-lg border border-[var(--support-line)] bg-[var(--support-panel)] px-4 pt-8 pb-4 text-center transition-colors hover:border-[var(--support-red)]"
+          className="group flex flex-col items-center px-4 pt-8 pb-4 text-center transition-transform duration-200 hover:-translate-y-1"
         >
           {/* The watch floats free on the card background — no picture-frame
               box around it, just the product photo and a glow ring. */}
