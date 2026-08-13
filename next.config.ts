@@ -1,11 +1,7 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: {
-    // Watch model photos are served from Shopify's product-media CDN
-    // (confirmed URLs, see lib/content.ts).
-    remotePatterns: [{ protocol: "https", hostname: "cdn.shopify.com" }],
-  },
-};
+// All watch photos are local (public/watches/*.png) — no external image
+// domains needed.
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

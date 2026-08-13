@@ -18,19 +18,31 @@ export interface WatchModel {
   imageUrl: string;
 }
 
+// Edge ships in two case colors — same specs/steps either way, shown as two
+// cards in the picker since customers pick by what their watch looks like.
+const EDGE_SHARED = {
+  tagline: "Square case · 4-button · Carbinox Max app",
+  caseShape: "SQUARE" as const,
+  companionApp: "Carbinox Max",
+  buttonLayout: "4-button (UP / DOWN / SEL / BACK)",
+  restartInstructions: "Long-press SEL for 3 seconds to power the watch on or off.",
+  waterGuidance:
+    "Manual specifically warns against saunas, hot showers, high-pressure water (diving/water-skiing), corrosive liquids, and UV exposure.",
+  accentColor: "#FF9F1C",
+};
+
 export const WATCH_MODELS: WatchModel[] = [
   {
-    key: "edge",
-    name: "Edge",
-    tagline: "Square case · 4-button · Carbinox Max app",
-    caseShape: "SQUARE",
-    companionApp: "Carbinox Max",
-    buttonLayout: "4-button (UP / DOWN / SEL / BACK)",
-    restartInstructions: "Long-press SEL for 3 seconds to power the watch on or off.",
-    waterGuidance:
-      "Manual specifically warns against saunas, hot showers, high-pressure water (diving/water-skiing), corrosive liquids, and UV exposure.",
-    accentColor: "#FF9F1C",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0049/0533/6935/files/5_2f16357c-4445-46a5-80f6-99e7bf0db68d.png?v=1771360169",
+    key: "edge_phantom_black",
+    name: "Edge — Phantom Black",
+    imageUrl: "/watches/edge-phantom-black.png",
+    ...EDGE_SHARED,
+  },
+  {
+    key: "edge_armor_silver",
+    name: "Edge — Armor Silver",
+    imageUrl: "/watches/edge-armor-silver.png",
+    ...EDGE_SHARED,
   },
   {
     key: "blaze_type_r",
@@ -43,7 +55,7 @@ export const WATCH_MODELS: WatchModel[] = [
       "Long-press SEL 3s for power off/restart/SOS. Long-press SEL 12s to force a restart if unresponsive.",
     waterGuidance: "Wear carefully during swimming/diving. Avoid saunas or hot showers.",
     accentColor: "#FF6A1A",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0049/0533/6935/files/1-min_3-300385.jpg?v=1732036847",
+    imageUrl: "/watches/blaze-type-r.png",
   },
   {
     key: "blaze_type_s",
@@ -56,7 +68,7 @@ export const WATCH_MODELS: WatchModel[] = [
       "Long-press SEL 3s for power off/restart/SOS. Long-press SEL 12s to force a restart if unresponsive.",
     waterGuidance: "Wear carefully during swimming/diving. Avoid saunas or hot showers.",
     accentColor: "#E8352B",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0049/0533/6935/files/2-min_3-332733.jpg?v=1732036849",
+    imageUrl: "/watches/blaze-type-s.png",
   },
   {
     key: "vortex",
@@ -68,7 +80,7 @@ export const WATCH_MODELS: WatchModel[] = [
     restartInstructions: "Long-press SEL to power off/restart. Hold longer to force a restart if unresponsive.",
     waterGuidance: "Wear carefully during swimming/diving. Avoid saunas or hot showers.",
     accentColor: "#2FE6A8",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0049/0533/6935/files/1_6.png?v=1771357498",
+    imageUrl: "/watches/vortex.png",
   },
   {
     key: "x_ranger",
@@ -80,7 +92,7 @@ export const WATCH_MODELS: WatchModel[] = [
     restartInstructions: "Press and hold the Power key for 2 seconds to turn the watch on/off.",
     waterGuidance: "Case back rated 5ATM & IP69K. Wear carefully during swimming/diving. Avoid saunas or hot showers.",
     accentColor: "#2DBFC4",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0049/0533/6935/files/4_3.png?v=1771357417",
+    imageUrl: "/watches/x-ranger.png",
   },
 ];
 
