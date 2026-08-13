@@ -36,7 +36,12 @@ export function StepCard({
 
       <div className="mb-4 flex gap-1">
         {steps.map((s, i) => (
-          <i key={s.title} className={`h-1 flex-1 rounded-full ${i <= stepIndex ? "bg-[var(--support-red)]" : "bg-[var(--support-line)]"}`} />
+          <i
+            key={s.title}
+            className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
+              i <= stepIndex ? "bg-[var(--support-red)]" : "bg-[var(--support-line)]"
+            }`}
+          />
         ))}
       </div>
 
@@ -56,14 +61,14 @@ export function StepCard({
           <button
             type="button"
             onClick={onFixed}
-            className="rounded-md bg-[var(--support-red)] px-4 py-3 text-[13px] font-bold uppercase tracking-wide text-white"
+            className="rounded-md bg-[var(--support-red)] px-4 py-3 text-[13px] font-bold uppercase tracking-wide text-white transition-transform duration-150 hover:scale-[1.03] active:scale-[0.98]"
           >
             That fixed it ✓
           </button>
           <button
             type="button"
             onClick={onStillBroken}
-            className="rounded-md border border-[var(--support-line)] bg-[var(--support-panel-2)] px-4 py-3 text-[13px] font-bold uppercase tracking-wide text-[var(--support-ink)]"
+            className="rounded-md border border-[var(--support-line)] bg-[var(--support-panel-2)] px-4 py-3 text-[13px] font-bold uppercase tracking-wide text-[var(--support-ink)] transition-transform duration-150 hover:scale-[1.03] active:scale-[0.98]"
           >
             Still not working →
           </button>

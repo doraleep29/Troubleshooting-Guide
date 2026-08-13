@@ -118,8 +118,13 @@ export function TroubleshootWizard({
     setView("watch");
   }
 
+  // Keying the animated block on view (and step/outcome within it) forces a
+  // remount whenever the user moves forward or back, replaying the
+  // view-fade entrance each time instead of an instant, static swap.
+  const transitionKey = view === "steps" ? `steps-${stepIndex}` : view === "end" ? `end-${outcome}` : view;
+
   return (
-    <div className="mx-auto max-w-[760px] px-4 pb-16">
+    <div className="support-content mx-auto max-w-[760px] px-4 pb-16">
       <header className="pt-6 pb-1">
         <div className="support-display text-[26px] text-white">
           CARBINO<span className="text-[var(--support-red)]">X</span> SUPPORT
@@ -138,16 +143,18 @@ export function TroubleshootWizard({
 
       <Trail activeIndex={view === "watch" ? 0 : view === "issue" ? 1 : 2} />
 
-      {view === "watch" && <WatchGrid watchModels={watchModels} onSelect={selectWatch} />}
+      <div key={transitionKey} className="view-fade">
+        {view === "watch" && <WatchGrid watchModels={watchModels} onSelect={selectWatch} />}
 
-      {view === "issue" && <IssueList issues={issues} onSelect={selectIssue} onBack={backToWatch} />}
+        {view === "issue" && <IssueList issues={issues} onSelect={selectIssue} onBack={backToWatch} />}
 
-      {view === "steps" && watch && issue && steps.length > 0 && (
-        <StepCard watch={watch} steps={steps} stepIndex={stepIndex} onBack={backToIssue} onFixed={markFixed} onStillBroken={markStillBroken} />
-      )}
+        {view === "steps" && watch && issue && steps.length > 0 && (
+          <StepCard watch={watch} steps={steps} stepIndex={stepIndex} onBack={backToIssue} onFixed={markFixed} onStillBroken={markStillBroken} />
+        )}
 
-      {view === "end" && outcome === "fixed" && <FixedCard onStartOver={startOver} />}
-      {view === "end" && outcome === "escalate" && <ContactCard onStartOver={startOver} />}
+        {view === "end" && outcome === "fixed" && <FixedCard onStartOver={startOver} />}
+        {view === "end" && outcome === "escalate" && <ContactCard onStartOver={startOver} />}
+      </div>
 
       <div className="mt-9 border-t border-[var(--support-line)] pt-4 text-[11px] leading-relaxed text-[var(--support-ink-dim)]">
         Content sourced from the model manuals and the live shopcarbinox.com troubleshooting guide. Have your order
