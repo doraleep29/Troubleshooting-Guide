@@ -8,14 +8,14 @@ interface TrailItem {
 export function SiteHeader({ activeIndex, trail }: { activeIndex: number; trail: TrailItem[] }) {
   return (
     <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--support-red)]/40 pt-6 pb-4">
-      <div>
+      <Link href="/" className="block">
         <div className="support-display text-[26px] text-white">
           CARBINO<span className="text-[var(--support-red)]">X</span> SUPPORT
         </div>
         <p className="mt-1 text-[11px] tracking-wider text-[var(--support-ink-dim)] uppercase">
           Durability &amp; Reliability, Beyond Reality
         </p>
-      </div>
+      </Link>
 
       <div className="support-display text-lg text-[var(--support-ink)] sm:text-xl">Let&apos;s Get It Working</div>
 
