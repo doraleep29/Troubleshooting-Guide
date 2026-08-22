@@ -9,12 +9,16 @@ export function ResolutionFeedback({
   modelKey,
   issueKey,
   stepSlug,
+  isLast,
+  nextStepNumber,
 }: {
   yesHref: string;
   noHref: string;
   modelKey: string;
   issueKey: string;
   stepSlug: string;
+  isLast: boolean;
+  nextStepNumber: number;
 }) {
   return (
     <div className="mt-6 border-t border-[var(--support-line)] pt-5">
@@ -32,9 +36,14 @@ export function ResolutionFeedback({
           onClick={() => trackEvent("step_failed", { modelId: modelKey, issueId: issueKey, stepId: stepSlug })}
           className="rounded-md border border-[var(--support-line)] bg-[var(--support-panel-2)] px-4 py-3 text-[13px] font-bold tracking-wide text-[var(--support-ink)] uppercase"
         >
-          No, still not working →
+          {isLast ? "No, still not working →" : `No — Try Step ${nextStepNumber} →`}
         </Link>
       </div>
+      {!isLast && (
+        <p className="mt-2.5 text-[12px] text-[var(--support-ink-dim)]">
+          Didn&apos;t work? There&apos;s another step to try before contacting support.
+        </p>
+      )}
     </div>
   );
 }

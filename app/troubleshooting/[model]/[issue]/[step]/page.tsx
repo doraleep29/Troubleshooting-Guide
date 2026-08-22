@@ -142,7 +142,15 @@ export default async function FixStepPage({
         </div>
 
         <div className="tw-feedback">
-          <ResolutionFeedback yesHref={yesHref} noHref={noHref} modelKey={watch.key} issueKey={issue.key} stepSlug={step.slug} />
+          <ResolutionFeedback
+            yesHref={yesHref}
+            noHref={noHref}
+            modelKey={watch.key}
+            issueKey={issue.key}
+            stepSlug={step.slug}
+            isLast={isLast}
+            nextStepNumber={stepIndex + 2}
+          />
         </div>
       </div>
 
