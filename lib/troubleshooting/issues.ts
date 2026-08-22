@@ -97,6 +97,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         title: "Rule out the power source",
         instructions: [
           "Try a different USB port, wall adapter, or location. If it charges from one source but not another, it's a voltage/power-source issue, not the watch.",
+          "Avoid high-wattage fast-charging bricks or laptop USB ports — these can trigger a safety shutdown on the watch's chip. Use a standard 5V/1A (or the certified adapter that came with it) wall adapter instead.",
         ],
         additionalHelp: [
           {
@@ -113,6 +114,15 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: ["{{restartInstructions}}"],
         visualSlot: "restart",
       },
+      {
+        slug: "force-boot-while-charging",
+        shortLabel: "Boot while charging",
+        title: "Force a boot while still on the charger",
+        instructions: [
+          "If the screen is still completely black, clean the magnetic contacts on the watch and the charger, then leave it on the charger undisturbed for 30–60 minutes.",
+          "While it's still attached to the charger, do the force-restart press again. A watch stuck in a deep low-power state sometimes only boots successfully while actively receiving power.",
+        ],
+      },
     ],
   },
   {
@@ -122,6 +132,14 @@ export const ISSUES: TroubleshootingIssue[] = [
     description: "Display stuck, unresponsive, or the touchscreen isn't registering taps.",
     steps: [
       {
+        slug: "hard-reset-all-buttons",
+        shortLabel: "Hard reset",
+        title: "Try a hard reset with all buttons",
+        instructions: [
+          "Press and hold all of the watch's buttons at the same time for about 15–30 seconds. This can bring the display back if the watch has become completely frozen or unresponsive.",
+        ],
+      },
+      {
         slug: "force-restart",
         shortLabel: "Force restart",
         title: "Force a restart",
@@ -129,11 +147,36 @@ export const ISSUES: TroubleshootingIssue[] = [
         visualSlot: "restart",
       },
       {
+        slug: "charge-and-retry",
+        shortLabel: "Charge & retry",
+        title: "Make sure it has enough charge",
+        instructions: [
+          "Connect it to the charging cable and let it charge for 30–60 minutes, then try turning it on again. If possible, try a different charging location too.",
+        ],
+        visualSlot: "chargingAlignment",
+      },
+      {
         slug: "firmware-update",
         shortLabel: "Update firmware",
         title: "Check for a firmware update",
-        instructions: ["Open {{companionApp}} → Device → Firmware/OTA Update, and install the latest version if available."],
+        instructions: [
+          "Open {{companionApp}} → Device → Firmware/OTA Update, and install the latest version if available — this is also recommended for screen freezing or glitching.",
+        ],
         visualSlot: "otaUpdate",
+      },
+      {
+        slug: "reset-device",
+        shortLabel: "Reset device",
+        title: "Reset the device in the app",
+        instructions: ["If it's responsive, open the Device section of {{companionApp}}, select Reset Device, and confirm."],
+      },
+      {
+        slug: "clear-app-data",
+        shortLabel: "Reinstall the app",
+        title: "Clear the app data and re-pair",
+        instructions: [
+          "If the issue continues, go to your phone's Settings → Apps → {{companionApp}} → Storage → Clear Data, then reopen the app and reconnect the watch.",
+        ],
       },
       {
         slug: "still-frozen",
@@ -258,6 +301,31 @@ export const ISSUES: TroubleshootingIssue[] = [
     description: "Battery life is much shorter than expected.",
     steps: [
       {
+        slug: "full-charge-and-restart",
+        shortLabel: "Charge & restart",
+        title: "Fully charge it, then restart",
+        instructions: [
+          "Charge the watch to 100%, then restart it and see if the drain rate improves. Keep an eye on how fast the percentage drops over the next few hours.",
+        ],
+        visualSlot: "chargingAlignment",
+      },
+      {
+        slug: "firmware-update",
+        shortLabel: "Update firmware",
+        title: "Check for a firmware update",
+        instructions: [
+          "Open {{companionApp}} → Device → Firmware Update and install one if available — a firmware update alone has resolved sudden fast-drain cases.",
+        ],
+        visualSlot: "otaUpdate",
+        additionalHelp: [
+          {
+            title: "Watch exposed to water or heat recently?",
+            content:
+              "If unusually fast drain started right after a trip or activity, note any exposure to water, high heat, or anything outside normal use — that context helps narrow down whether it's a settings issue or a hardware one.",
+          },
+        ],
+      },
+      {
         slug: "lower-brightness",
         shortLabel: "Lower brightness",
         title: "Lower screen brightness",
@@ -329,6 +397,51 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Keeps resetting",
         title: "If it resets on its own",
         instructions: ["A dropped Bluetooth connection or phone network issue can cause these settings to revert — reapply after reconnecting."],
+      },
+    ],
+  },
+  {
+    key: "STICKY_BUTTONS",
+    slug: "sticky-buttons",
+    label: "A button feels stuck or hard to press",
+    description: "A physical button (Select, Back, Up, or Down) sticks, feels stiff, or needs prying to respond.",
+    steps: [
+      {
+        slug: "stop-forcing",
+        shortLabel: "Stop forcing it",
+        title: "Stop prying or forcing the button",
+        instructions: [
+          "Don't pry the button out with a fingernail or anything sharp — that risks causing more damage. A physically sticking button is usually debris around the button opening, not a sensor or software fault.",
+        ],
+        visualSlot: "buttonLayout",
+      },
+      {
+        slug: "clean-button-openings",
+        shortLabel: "Clean the openings",
+        title: "Clean around the button openings",
+        instructions: [
+          "Power the watch off if possible. With a clean, soft, dry cloth, gently wipe around the affected button and the small gap around it.",
+          "While cleaning, gently press and release the button several times to help loosen any debris — don't use anything sharp.",
+          "Once it's clean and dry, turn the watch back on and test the button again.",
+        ],
+      },
+      {
+        slug: "restart-carefully",
+        shortLabel: "Careful restart",
+        title: "Force a restart — carefully",
+        instructions: [
+          "{{restartInstructions}}",
+          "If the stuck button is the one you'd need to hold for this, don't force it — skip this step and go straight to contacting support instead.",
+        ],
+        visualSlot: "restart",
+      },
+      {
+        slug: "send-video",
+        shortLabel: "Send a video",
+        title: "Still sticking? Send a close-up video",
+        instructions: [
+          "Record a short video showing the button being pressed — especially how it feels and what happens on-screen. Support reviews a video for physical button issues before proceeding with a replacement.",
+        ],
       },
     ],
   },
