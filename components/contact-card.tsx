@@ -14,16 +14,6 @@ export function ContactCard({
   issue: TroubleshootingIssue;
   startOverHref: string;
 }) {
-  const subject = `Support request — ${watch.name} — ${issue.label}`;
-  const body = [
-    `Watch model: ${watch.name}`,
-    `Issue: ${issue.label}`,
-    `Steps already tried: ${issue.steps.map((s) => s.title).join("; ")}`,
-    "",
-    "What happened:",
-  ].join("\n");
-  const mailHref = `mailto:info@shopcarbinox.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
   function handleEscalate() {
     trackEvent("support_escalation_clicked", { modelId: watch.key, issueId: issue.key });
   }
@@ -40,29 +30,23 @@ export function ContactCard({
         replacement automatically — no more troubleshooting needed. A human still reviews every request; nothing is
         approved automatically here.
       </div>
-      <div className="text-sm text-[var(--support-ink-dim)]">
-        Email{" "}
-        <a href={mailHref} onClick={handleEscalate} className="font-bold text-[var(--support-red)] no-underline">
-          info@shopcarbinox.com
-        </a>{" "}
-        (pre-filled with your watch model and the steps you tried) or visit the{" "}
-        <a
-          href="https://shopcarbinox.com/pages/carbinox-troubleshooting-guide"
-          target="_blank"
-          rel="noreferrer"
-          onClick={handleEscalate}
-          className="font-bold text-[var(--support-red)] no-underline"
-        >
-          support page
-        </a>
-        .
-      </div>
-      <Link
-        href={startOverHref}
-        className="mt-5 inline-block rounded-md border border-[var(--support-line)] bg-transparent px-4 py-3 text-[13px] font-bold tracking-wide text-[var(--support-ink)] uppercase"
+      <a
+        href="https://carbinox.zendesk.com/hc/en-us/requests/new"
+        target="_blank"
+        rel="noreferrer"
+        onClick={handleEscalate}
+        className="inline-block rounded-md bg-[var(--support-red)] px-5 py-3 text-[13px] font-bold tracking-wide text-white uppercase"
       >
-        Start a new lookup
-      </Link>
+        Get an agent
+      </a>
+      <div className="mt-4">
+        <Link
+          href={startOverHref}
+          className="inline-block rounded-md border border-[var(--support-line)] bg-transparent px-4 py-3 text-[13px] font-bold tracking-wide text-[var(--support-ink)] uppercase"
+        >
+          Start a new lookup
+        </Link>
+      </div>
     </div>
   );
 }

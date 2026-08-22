@@ -55,11 +55,11 @@ friendly recovery card instead of a hard 404.
 
 ## Escalation
 
-When the guided steps don't resolve it, the guide shows a `mailto:` link
-pre-filled with the watch model and the steps already tried, plus a link to
-the live shopcarbinox.com support page — no ticket is created automatically,
-and no replacement is ever auto-approved. This keeps the project fully
-static/serverless with nothing to configure.
+When the guided steps don't resolve it, the guide shows a "Get an agent"
+button linking to the Zendesk request form
+(`https://carbinox.zendesk.com/hc/en-us/requests/new`) — no ticket is
+created automatically from here, and no replacement is ever auto-approved.
+This keeps the project fully static/serverless with nothing to configure.
 
 ## Analytics
 
