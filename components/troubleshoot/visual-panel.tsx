@@ -23,7 +23,7 @@ export function InstructionVisualPanel({
             <div className="relative h-[260px] w-full transition-opacity motion-reduce:transition-none group-hover:opacity-90">
               <Image src={visual.src} alt={visual.alt} fill className="object-contain" sizes="(max-width: 1199px) 90vw, 500px" />
             </div>
-            <div className="mt-2 text-center text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase group-hover:text-[var(--support-red)]">
+            <div className="mt-2 text-center text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase group-hover:text-[var(--support-accent)]">
               Tap to enlarge
             </div>
           </button>
@@ -54,7 +54,7 @@ export function InstructionVisualPanel({
             <button
               type="button"
               onClick={() => setLightboxOpen(false)}
-              className="absolute -top-3 -right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--support-red)] text-lg font-bold text-white"
+              className="absolute -top-3 -right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[var(--support-accent)] text-lg font-bold text-[#0a0a0a]"
               aria-label="Close"
             >
               ×

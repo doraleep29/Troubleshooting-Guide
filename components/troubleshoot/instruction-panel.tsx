@@ -22,7 +22,7 @@ export function InstructionPanel({
     <div className="rounded-lg border border-[var(--support-line)] bg-[var(--support-panel)] p-6">
       <Link
         href={`/troubleshooting/${modelSlug}`}
-        className="text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase hover:text-[var(--support-red)]"
+        className="text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase hover:text-[var(--support-accent)]"
       >
         {issue.label}
       </Link>

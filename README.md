@@ -12,6 +12,16 @@ page is meant to be public.
 
 Next.js (App Router) + React + TypeScript + Tailwind CSS. No backend.
 
+## Branding
+
+Uses the real Carbinox logo (`public/brand/carbinox-wordmark.webp` in the
+header, `public/brand/carbinox-mark.png` as `app/icon.png`, the favicon) and
+the real black + yellow brand palette — `--support-accent` in
+`app/globals.css` (`#f5b400`) is the single source of truth for the yellow
+used across buttons, active states, and badges. The header logo is shown
+white via a CSS `invert` filter since the source files are black ink on a
+transparent background.
+
 ## Content
 
 Watch models live in `lib/troubleshooting/models.ts`; issues and guided

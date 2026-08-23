@@ -8,7 +8,7 @@ export function InvalidRouteCard({ message, href, linkLabel }: { message: string
       <p className="mb-4 text-sm leading-relaxed text-[var(--support-ink-dim)]">{message}</p>
       <Link
         href={href}
-        className="inline-block rounded-md bg-[var(--support-red)] px-4 py-3 text-[13px] font-bold tracking-wide text-white uppercase"
+        className="inline-block rounded-md bg-[var(--support-accent)] px-4 py-3 text-[13px] font-bold tracking-wide text-[#0a0a0a] uppercase"
       >
         {linkLabel}
       </Link>

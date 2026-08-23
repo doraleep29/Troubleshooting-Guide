@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* True black background, bold red accent — matches the confirmed brand
-   look from shopcarbinox.com and the "$150 OFF" / lifetime-warranty
-   badges. This is a fixed dark customer-facing page, not theme-aware. */
+/* True black background, bold yellow accent — matches the actual
+   shopcarbinox.com brand look (black + yellow). This is a fixed dark
+   customer-facing page, not theme-aware. */
 .support-shell {
   --support-bg: #0a0a0a;
   --support-panel: #151515;
@@ -10,8 +10,7 @@
   --support-line: #2c2c2c;
   --support-ink: #f5f5f5;
   --support-ink-dim: #9a9a9a;
-  --support-red: #e8352b;
-  --support-gold: #f5b400;
+  --support-accent: #f5b400;
   --support-green: #3daa57;
   min-height: 100%;
   background: var(--support-bg);

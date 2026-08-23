@@ -37,11 +37,11 @@ function WatchCard({ watch }: { watch: WatchModel }) {
 function SquareCaseIcon() {
   return (
     <svg viewBox="0 0 64 80" className="h-14 w-11" fill="none" aria-hidden>
-      <rect x="14" y="14" width="36" height="52" rx="8" stroke="var(--support-gold)" strokeWidth="2.5" />
-      <rect x="6" y="21" width="8" height="6" rx="1.5" fill="var(--support-gold)" />
-      <rect x="6" y="39" width="8" height="6" rx="1.5" fill="var(--support-gold)" />
-      <rect x="50" y="21" width="8" height="6" rx="1.5" fill="var(--support-gold)" />
-      <rect x="50" y="39" width="8" height="6" rx="1.5" fill="var(--support-gold)" />
+      <rect x="14" y="14" width="36" height="52" rx="8" stroke="var(--support-accent)" strokeWidth="2.5" />
+      <rect x="6" y="21" width="8" height="6" rx="1.5" fill="var(--support-accent)" />
+      <rect x="6" y="39" width="8" height="6" rx="1.5" fill="var(--support-accent)" />
+      <rect x="50" y="21" width="8" height="6" rx="1.5" fill="var(--support-accent)" />
+      <rect x="50" y="39" width="8" height="6" rx="1.5" fill="var(--support-accent)" />
     </svg>
   );
 }
@@ -49,9 +49,9 @@ function SquareCaseIcon() {
 function RoundCaseIcon() {
   return (
     <svg viewBox="0 0 64 80" className="h-14 w-11" fill="none" aria-hidden>
-      <circle cx="32" cy="40" r="26" stroke="var(--support-red)" strokeWidth="2.5" />
-      <rect x="50" y="30" width="10" height="7" rx="1.5" fill="var(--support-red)" />
-      <rect x="50" y="43" width="10" height="7" rx="1.5" fill="var(--support-red)" />
+      <circle cx="32" cy="40" r="26" stroke="var(--support-accent)" strokeWidth="2.5" />
+      <rect x="50" y="30" width="10" height="7" rx="1.5" fill="var(--support-accent)" />
+      <rect x="50" y="43" width="10" height="7" rx="1.5" fill="var(--support-accent)" />
     </svg>
   );
 }
@@ -67,7 +67,7 @@ function IdentifyHelp() {
       <div className="mt-4 flex items-start gap-3 border-t border-[var(--support-line)] pt-4">
         <SquareCaseIcon />
         <div>
-          <div className="text-[11.5px] font-bold uppercase tracking-wide text-[var(--support-gold)]">
+          <div className="text-[11.5px] font-bold uppercase tracking-wide text-[var(--support-accent)]">
             Square case
           </div>
           <div className="mt-0.5 text-xs text-[var(--support-ink-dim)]">4 buttons</div>
@@ -77,7 +77,7 @@ function IdentifyHelp() {
       <div className="mt-4 flex items-start gap-3 border-t border-[var(--support-line)] pt-4">
         <RoundCaseIcon />
         <div>
-          <div className="text-[11.5px] font-bold uppercase tracking-wide text-[var(--support-red)]">Round case</div>
+          <div className="text-[11.5px] font-bold uppercase tracking-wide text-[var(--support-accent)]">Round case</div>
           <div className="mt-0.5 text-xs text-[var(--support-ink-dim)]">2 or 4 buttons</div>
         </div>
       </div>

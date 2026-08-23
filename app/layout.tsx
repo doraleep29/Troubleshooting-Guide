@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable}`}>
       <body className="support-shell min-h-screen">
-        <div className="bg-[var(--support-red)] px-3 py-2 text-center text-xs font-bold tracking-wide text-white">
+        <div className="bg-[var(--support-accent)] px-3 py-2 text-center text-xs font-bold tracking-wide text-[#0a0a0a]">
           LIFETIME WARRANTY · BREAK IT, WE REPLACE IT — NO B.S.
         </div>
         {children}

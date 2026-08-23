@@ -22,9 +22,9 @@ export function TroubleshootingTimeline({
           status === "complete"
             ? "bg-[var(--support-green)] text-[#0a0a0a]"
             : status === "active"
-              ? "bg-[var(--support-red)] text-white"
+              ? "bg-[var(--support-accent)] text-[#0a0a0a]"
               : "border border-[var(--support-line)] text-[var(--support-ink-dim)]";
-        const labelClass = status === "active" ? "text-[var(--support-red)]" : "text-[var(--support-ink-dim)]";
+        const labelClass = status === "active" ? "text-[var(--support-accent)]" : "text-[var(--support-ink-dim)]";
 
         const content = (
           <span className="flex items-center gap-1.5">

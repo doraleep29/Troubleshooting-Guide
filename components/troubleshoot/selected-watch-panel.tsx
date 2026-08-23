@@ -33,7 +33,7 @@ export function SelectedWatchPanel({ watch }: { watch: WatchModel }) {
 
       <Link
         href="/"
-        className="mt-3 block rounded-md border border-[var(--support-line)] px-3 py-2.5 text-center text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase hover:border-[var(--support-red)] hover:text-[var(--support-red)]"
+        className="mt-3 block rounded-md border border-[var(--support-line)] px-3 py-2.5 text-center text-[11px] font-bold tracking-wide text-[var(--support-ink-dim)] uppercase hover:border-[var(--support-accent)] hover:text-[var(--support-accent)]"
       >
         ← Change watch
       </Link>

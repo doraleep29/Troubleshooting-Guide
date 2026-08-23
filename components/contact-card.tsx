@@ -19,13 +19,13 @@ export function ContactCard({
   }
 
   return (
-    <div className="rounded-lg border border-[var(--support-red)] bg-[var(--support-panel)] p-7 text-center">
+    <div className="rounded-lg border border-[var(--support-accent)] bg-[var(--support-panel)] p-7 text-center">
       <div className="mb-3 text-3xl">⚠</div>
       <div className="support-display mb-2.5 text-xl text-[var(--support-ink)]">Let&apos;s get a human on it</div>
       <p className="mb-2.5 text-sm leading-relaxed text-[var(--support-ink-dim)]">
         You&apos;ve been through the field steps for your {watch.name} — this one needs the support team.
       </p>
-      <div className="my-3.5 rounded bg-[var(--support-panel-2)] p-3.5 text-left text-[12.5px] leading-relaxed text-[var(--support-gold)]">
+      <div className="my-3.5 rounded bg-[var(--support-panel-2)] p-3.5 text-left text-[12.5px] leading-relaxed text-[var(--support-accent)]">
         If this is a power/screen issue and you&apos;re within 45 days of purchase, it qualifies for a free
         replacement automatically — no more troubleshooting needed. A human still reviews every request; nothing is
         approved automatically here.
@@ -35,7 +35,7 @@ export function ContactCard({
         target="_blank"
         rel="noreferrer"
         onClick={handleEscalate}
-        className="inline-block rounded-md bg-[var(--support-red)] px-5 py-3 text-[13px] font-bold tracking-wide text-white uppercase"
+        className="inline-block rounded-md bg-[var(--support-accent)] px-5 py-3 text-[13px] font-bold tracking-wide text-[#0a0a0a] uppercase"
       >
         Get an agent
       </a>

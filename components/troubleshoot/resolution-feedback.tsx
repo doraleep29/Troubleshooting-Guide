@@ -27,7 +27,7 @@ export function ResolutionFeedback({
         <Link
           href={yesHref}
           onClick={() => trackEvent("step_completed", { modelId: modelKey, issueId: issueKey, stepId: stepSlug })}
-          className="rounded-md bg-[var(--support-red)] px-4 py-3 text-[13px] font-bold tracking-wide text-white uppercase"
+          className="rounded-md bg-[var(--support-accent)] px-4 py-3 text-[13px] font-bold tracking-wide text-[#0a0a0a] uppercase"
         >
           Yes, it&apos;s working
         </Link>

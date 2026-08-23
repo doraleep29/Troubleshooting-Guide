@@ -21,7 +21,7 @@ const ICON_BY_ISSUE: Record<string, IconKey> = {
 };
 
 function IssueIcon({ icon }: { icon: IconKey }) {
-  const common = { viewBox: "0 0 24 24", className: "h-5 w-5", fill: "none", stroke: "var(--support-red)" };
+  const common = { viewBox: "0 0 24 24", className: "h-5 w-5", fill: "none", stroke: "var(--support-accent)" };
   switch (icon) {
     case "power":
       return (
@@ -65,7 +65,7 @@ function IssueIcon({ icon }: { icon: IconKey }) {
         <svg {...common}>
           <rect x="2" y="7" width="17" height="10" rx="1.5" strokeWidth="2" />
           <path d="M21 10v4" strokeWidth="2" strokeLinecap="round" />
-          <rect x="4.5" y="9.5" width="6" height="5" fill="var(--support-red)" stroke="none" />
+          <rect x="4.5" y="9.5" width="6" height="5" fill="var(--support-accent)" stroke="none" />
         </svg>
       );
     case "water":
@@ -110,7 +110,7 @@ export function IssueList({ issues, watch }: { issues: TroubleshootingIssue[]; w
         <p className="mt-1 text-xs leading-relaxed text-[var(--support-ink-dim)]">{watch.tagline}</p>
         <Link
           href="/"
-          className="mt-4 block w-full rounded-md border border-[var(--support-line)] px-3 py-2 text-center text-[11px] font-bold uppercase tracking-wide text-[var(--support-ink-dim)] hover:border-[var(--support-red)] hover:text-[var(--support-red)]"
+          className="mt-4 block w-full rounded-md border border-[var(--support-line)] px-3 py-2 text-center text-[11px] font-bold uppercase tracking-wide text-[var(--support-ink-dim)] hover:border-[var(--support-accent)] hover:text-[var(--support-accent)]"
         >
           ← Change watch
         </Link>
@@ -122,7 +122,7 @@ export function IssueList({ issues, watch }: { issues: TroubleshootingIssue[]; w
             key={issue.key}
             href={`/troubleshooting/${watch.slug}/${issue.slug}/${issue.steps[0].slug}`}
             onClick={() => trackEvent("issue_selected", { modelId: watch.key, issueId: issue.key })}
-            className="flex items-start gap-3 rounded-md border border-[var(--support-line)] bg-[var(--support-panel)] px-4 py-3.5 text-left transition-colors hover:border-[var(--support-red)]"
+            className="flex items-start gap-3 rounded-md border border-[var(--support-line)] bg-[var(--support-panel)] px-4 py-3.5 text-left transition-colors hover:border-[var(--support-accent)]"
           >
             <span className="mt-0.5 shrink-0">
               <IssueIcon icon={ICON_BY_ISSUE[issue.key] ?? "wrench"} />
