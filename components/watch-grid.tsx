@@ -7,13 +7,20 @@ import { trackEvent } from "@/lib/troubleshooting/analytics";
 
 function WatchCard({ watch }: { watch: WatchModel }) {
   return (
-    <div className="flex flex-col items-center rounded-xl border border-[var(--support-line)] bg-[var(--support-panel)] px-5 pt-8 pb-5 text-center transition-colors hover:border-[var(--support-red)]">
+    <Link
+      href={`/troubleshooting/${watch.slug}`}
+      onClick={() => {
+        trackEvent("troubleshooting_started", { modelId: watch.key });
+        trackEvent("watch_selected", { modelId: watch.key });
+      }}
+      className="group flex flex-col items-center px-4 pt-8 pb-4 text-center transition-transform duration-200 hover:-translate-y-1"
+    >
       <div className="relative h-[180px] w-full">
         <Image
           src={watch.imageUrl}
           alt={watch.name}
           fill
-          className="object-contain drop-shadow-[0_20px_26px_rgba(0,0,0,0.65)]"
+          className="object-contain drop-shadow-[0_20px_26px_rgba(0,0,0,0.65)] transition-transform duration-200 group-hover:-translate-y-1.5"
           sizes="(max-width: 480px) 100vw, 420px"
         />
       </div>
@@ -23,20 +30,7 @@ function WatchCard({ watch }: { watch: WatchModel }) {
         aria-hidden
       />
       <div className="mt-4 support-display text-lg text-[var(--support-ink)]">{watch.name}</div>
-      <p className="mt-1 text-xs leading-relaxed text-[var(--support-ink-dim)]">{watch.tagline}</p>
-
-      <Link
-        href={`/troubleshooting/${watch.slug}`}
-        onClick={() => {
-          trackEvent("troubleshooting_started", { modelId: watch.key });
-          trackEvent("watch_selected", { modelId: watch.key });
-        }}
-        className="mt-4 block w-full rounded px-3 py-2.5 text-center text-[11px] font-bold uppercase tracking-wide text-[#0a0a0a] transition-opacity hover:opacity-90"
-        style={{ background: watch.accentColor }}
-      >
-        Select
-      </Link>
-    </div>
+    </Link>
   );
 }
 
