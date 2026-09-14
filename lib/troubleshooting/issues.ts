@@ -80,16 +80,10 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Inspect charger",
         title: "Check the magnetic contact",
         instructions: [
-          "Wipe the charging pins on the back of the watch and on the base with a dry cloth, and make sure the watch is seated with the metal contacts aligned directly to the base.",
+          "Perspiration, oils, and invisible residue on the copper contacts are the most common reason a watch stops charging, even with a brand-new cable. Use a cotton swab lightly dampened with rubbing alcohol (or a dry microfiber cloth) to thoroughly clean the charging pins on the back of the watch.",
+          "Let it air dry completely for about 2 minutes before reconnecting the charger, and make sure the watch is seated with the metal contacts aligned directly to the base.",
         ],
         visualSlot: "chargingPort",
-        additionalHelp: [
-          {
-            title: "Charging pins dirty?",
-            content:
-              "Wipe the charging pins on the back of the watch and on the base with a dry, lint-free cloth before every charge — residue here is the most common cause of a watch that won't charge.",
-          },
-        ],
       },
       {
         slug: "power-source",
@@ -97,7 +91,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         title: "Rule out the power source",
         instructions: [
           "Try a different USB port, wall adapter, or location. If it charges from one source but not another, it's a voltage/power-source issue, not the watch.",
-          "Avoid high-wattage fast-charging bricks or laptop USB ports — these can trigger a safety shutdown on the watch's chip. Use a standard 5V/1A (or the certified adapter that came with it) wall adapter instead.",
+          "Avoid high-wattage fast-charging bricks (20W+ USB-C/PD wall chargers) — these can trigger a safety shutdown on the watch's charging circuit. Use a low-power source instead: a standard computer USB port, an older 5V/1A wall adapter, or a low-wattage power bank.",
         ],
         additionalHelp: [
           {
@@ -119,8 +113,8 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Boot while charging",
         title: "Force a boot while still on the charger",
         instructions: [
-          "If the screen is still completely black, clean the magnetic contacts on the watch and the charger, then leave it on the charger undisturbed for 30–60 minutes.",
-          "While it's still attached to the charger, do the force-restart press again. A watch stuck in a deep low-power state sometimes only boots successfully while actively receiving power.",
+          "If the screen is still completely black, clean the magnetic contacts on the watch and the charger, connect it to a low-power source, and leave it plugged in undisturbed for 30–60 minutes.",
+          "While it's still attached to the charger, press and hold the power/SEL button for 30–40 continuous seconds — longer than a normal restart press. This can force a hard restart of the power-control chip if the watch is stuck in a deep discharge state.",
         ],
       },
     ],
