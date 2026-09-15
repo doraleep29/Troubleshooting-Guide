@@ -28,7 +28,8 @@ export type ManualVisualSlot =
   | "cleanButtonOpenings"
   | "resetDeviceInApp"
   | "keepAppRunningBackground"
-  | "fullyChargeThenRestart";
+  | "fullyChargeThenRestart"
+  | "checkFirmwareUpdateBattery";
 
 export interface WatchModel {
   key: string;
@@ -114,11 +115,11 @@ export const WATCH_MODELS: WatchModel[] = [
     // powerSource/forceBootWhileCharging/checkProximityBackgroundApp/
     // removeBluetoothCompetition/setExpectationsMargin/factoryResetAccuracy/
     // avoidExcludedWaterConditions/stopPryingButton/cleanButtonOpenings/
-    // resetDeviceInApp/keepAppRunningBackground/fullyChargeThenRestart are
-    // Phantom-Black-specific for now: each diagram renders this exact case
-    // finish, and Armor Silver hasn't gotten its own versions yet — falls
-    // back to the "not added yet" placeholder there rather than showing the
-    // wrong-colored case.
+    // resetDeviceInApp/keepAppRunningBackground/fullyChargeThenRestart/
+    // checkFirmwareUpdateBattery are Phantom-Black-specific for now: each
+    // diagram renders this exact case finish, and Armor Silver hasn't
+    // gotten its own versions yet — falls back to the "not added yet"
+    // placeholder there rather than showing the wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source--edge.png",
@@ -133,6 +134,7 @@ export const WATCH_MODELS: WatchModel[] = [
       resetDeviceInApp: "/troubleshooting-diagrams/edge/reset-device-in-app.png",
       keepAppRunningBackground: "/troubleshooting-diagrams/edge/keep-app-running-background.png",
       fullyChargeThenRestart: "/troubleshooting-diagrams/edge/fully-charge-then-restart.png",
+      checkFirmwareUpdateBattery: "/troubleshooting-diagrams/edge/check-firmware-update.png",
     },
   },
   {

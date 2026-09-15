@@ -46,6 +46,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   resetDeviceInApp: "Reset the device in the app",
   keepAppRunningBackground: "Keep the app running in the background",
   fullyChargeThenRestart: "Fully charge it, then restart",
+  checkFirmwareUpdateBattery: "Check for a firmware update",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -75,6 +76,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Leave the companion app running in the background; if it is fully closed, reopen it so the Carbinox Edge can receive new notifications.",
   fullyChargeThenRestart:
     "Charge the Carbinox Edge to 100 percent, restart it, and observe the battery percentage over the next few hours.",
+  checkFirmwareUpdateBattery:
+    "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
 };
 
 export interface ResolvedStepVisual {
@@ -176,6 +179,7 @@ export const sharedStepDiagrams: Record<
 const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
   stopPryingButton: "buttonLayout",
   fullyChargeThenRestart: "chargingAlignment",
+  checkFirmwareUpdateBattery: "otaUpdate",
 };
 
 // Resolves a step's visual: the selected watch's own manual crop first (each
@@ -470,7 +474,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Open {{companionApp}} → Device → Firmware Update and install one if available — a firmware update alone has resolved sudden fast-drain cases.",
         ],
-        visualSlot: "otaUpdate",
+        visualSlot: "checkFirmwareUpdateBattery",
         additionalHelp: [
           {
             title: "Watch exposed to water or heat recently?",
