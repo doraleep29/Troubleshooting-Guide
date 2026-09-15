@@ -43,6 +43,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   avoidExcludedWaterConditions: "Avoid the excluded conditions going forward",
   stopPryingButton: "Stop prying or forcing the button",
   cleanButtonOpenings: "Clean around the button openings",
+  resetDeviceInApp: "Reset the device in the app",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -66,6 +67,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Do not pry the Carbinox Edge button with a fingernail or sharp object; debris around the button opening may cause sticking.",
   cleanButtonOpenings:
     "Power off the Carbinox Edge, wipe around the affected button with a clean soft dry cloth, gently press and release it several times, then turn the watch on and test it.",
+  resetDeviceInApp:
+    "If the device is responsive, open Carbinox Max, select Device, choose Reset Device, and confirm.",
 };
 
 export interface ResolvedStepVisual {
@@ -303,6 +306,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Reset device",
         title: "Reset the device in the app",
         instructions: ["If it's responsive, open the Device section of {{companionApp}}, select Reset Device, and confirm."],
+        visualSlot: "resetDeviceInApp",
       },
       {
         slug: "clear-app-data",
