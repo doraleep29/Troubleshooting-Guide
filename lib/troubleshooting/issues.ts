@@ -45,6 +45,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   cleanButtonOpenings: "Clean around the button openings",
   resetDeviceInApp: "Reset the device in the app",
   keepAppRunningBackground: "Keep the app running in the background",
+  fullyChargeThenRestart: "Fully charge it, then restart",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -72,6 +73,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "If the device is responsive, open Carbinox Max, select Device, choose Reset Device, and confirm.",
   keepAppRunningBackground:
     "Leave the companion app running in the background; if it is fully closed, reopen it so the Carbinox Edge can receive new notifications.",
+  fullyChargeThenRestart:
+    "Charge the Carbinox Edge to 100 percent, restart it, and observe the battery percentage over the next few hours.",
 };
 
 export interface ResolvedStepVisual {
@@ -164,6 +167,17 @@ export const sharedStepDiagrams: Record<
   },
 };
 
+// A few slots are dedicated Edge-Phantom-Black illustrations that replace a
+// generic slot other models still rely on for the same step (e.g.
+// stopPryingButton replaces buttonLayout). When a watch has no entry for the
+// dedicated slot, fall back to the generic one it's keyed to instead of
+// dropping a diagram that watch already had — the step's clearer title still
+// applies, but the image and its alt text describe what's actually shown.
+const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
+  stopPryingButton: "buttonLayout",
+  fullyChargeThenRestart: "chargingAlignment",
+};
+
 // Resolves a step's visual: the selected watch's own manual crop first (each
 // model's manual looks different), then a shared cross-model diagram for
 // generic steps, then null so the UI shows an honest "not added yet" state
@@ -179,21 +193,15 @@ export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): Res
         title: VISUAL_TITLES[step.visualSlot],
       };
     }
-    // stopPryingButton replaces the generic buttonLayout diagram with a
-    // dedicated illustration for Edge Phantom Black. Other models haven't
-    // gotten their own dedicated version yet — fall back to their existing
-    // (still accurate) buttonLayout diagram under this step's clearer title,
-    // rather than dropping a diagram they already had.
-    if (step.visualSlot === "stopPryingButton") {
-      const fallbackSrc = watch.manualVisuals?.buttonLayout;
-      if (fallbackSrc) {
-        return {
-          type: "image",
-          src: fallbackSrc,
-          alt: `${VISUAL_TITLES.buttonLayout} — ${watch.name} manual diagram`,
-          title: VISUAL_TITLES.stopPryingButton,
-        };
-      }
+    const fallbackSlot = SLOT_FALLBACKS[step.visualSlot];
+    const fallbackSrc = fallbackSlot && watch.manualVisuals?.[fallbackSlot];
+    if (fallbackSlot && fallbackSrc) {
+      return {
+        type: "image",
+        src: fallbackSrc,
+        alt: `${VISUAL_TITLES[fallbackSlot]} — ${watch.name} manual diagram`,
+        title: VISUAL_TITLES[step.visualSlot],
+      };
     }
   }
   const shared = sharedStepDiagrams[step.slug];
@@ -453,7 +461,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Charge the watch to 100%, then restart it and see if the drain rate improves. Keep an eye on how fast the percentage drops over the next few hours.",
         ],
-        visualSlot: "chargingAlignment",
+        visualSlot: "fullyChargeThenRestart",
       },
       {
         slug: "firmware-update",
