@@ -44,6 +44,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   stopPryingButton: "Stop prying or forcing the button",
   cleanButtonOpenings: "Clean around the button openings",
   resetDeviceInApp: "Reset the device in the app",
+  keepAppRunningBackground: "Keep the app running in the background",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -69,6 +70,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Power off the Carbinox Edge, wipe around the affected button with a clean soft dry cloth, gently press and release it several times, then turn the watch on and test it.",
   resetDeviceInApp:
     "If the device is responsive, open Carbinox Max, select Device, choose Reset Device, and confirm.",
+  keepAppRunningBackground:
+    "Leave the companion app running in the background; if it is fully closed, reopen it so the Carbinox Edge can receive new notifications.",
 };
 
 export interface ResolvedStepVisual {
@@ -397,6 +400,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "If the companion app is fully closed (not just backgrounded), the watch stops receiving new notifications until it's reopened.",
         ],
+        visualSlot: "keepAppRunningBackground",
       },
     ],
   },
