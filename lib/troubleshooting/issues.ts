@@ -50,6 +50,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   lowerScreenBrightness: "Lower screen brightness",
   turnOnBatterySaver: "Turn on battery-saving mode",
   settingsResetOnOwn: "If it resets on its own",
+  contactSupportReplacement: "Contact support for the replacement",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -87,6 +88,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
   settingsResetOnOwn:
     "If Bluetooth or the phone network disconnects, reconnect the phone and Carbinox Edge and then reapply the time, distance and temperature settings.",
+  contactSupportReplacement:
+    "Take a clear photo of the damaged area, include the Edge Phantom Black watch model, and send both items to Carbinox Support to start the replacement-part request.",
 };
 
 export interface ResolvedStepVisual {
@@ -640,6 +643,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Contact support",
         title: "Contact support for the replacement",
         instructions: ["Send a photo and your watch model to support to get the replacement part started."],
+        visualSlot: "contactSupportReplacement",
       },
     ],
   },
