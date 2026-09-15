@@ -18,7 +18,8 @@ export type ManualVisualSlot =
   | "otaUpdate"
   | "bluetoothCalling"
   | "powerSource"
-  | "forceBootWhileCharging";
+  | "forceBootWhileCharging"
+  | "checkProximityBackgroundApp";
 
 export interface WatchModel {
   key: string;
@@ -101,14 +102,16 @@ export const WATCH_MODELS: WatchModel[] = [
     variantName: "Phantom Black",
     imageUrl: "/watches/edge-phantom-black.png",
     ...EDGE_SHARED,
-    // powerSource/forceBootWhileCharging are Phantom-Black-specific for now:
-    // both diagrams render this exact case finish, and Armor Silver hasn't
-    // gotten its own versions yet — falls back to the "not added yet"
-    // placeholder there rather than showing the wrong-colored case.
+    // powerSource/forceBootWhileCharging/checkProximityBackgroundApp are
+    // Phantom-Black-specific for now: each diagram renders this exact case
+    // finish, and Armor Silver hasn't gotten its own versions yet — falls
+    // back to the "not added yet" placeholder there rather than showing the
+    // wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source--edge.png",
       forceBootWhileCharging: "/troubleshooting-diagrams/edge/force-boot-while-charging.png",
+      checkProximityBackgroundApp: "/troubleshooting-diagrams/edge/check-proximity-background-app.png",
     },
   },
   {
