@@ -41,6 +41,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   setExpectationsMargin: "Set expectations on margin",
   factoryResetAccuracy: "Reset to factory settings if it persists",
   avoidExcludedWaterConditions: "Avoid the excluded conditions going forward",
+  stopPryingButton: "Stop prying or forcing the button",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -60,6 +61,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
   avoidExcludedWaterConditions:
     "Avoid exposing the Carbinox Edge to saunas and hot showers because heat and steam can affect its seals over time.",
+  stopPryingButton:
+    "Do not pry the Carbinox Edge button with a fingernail or sharp object; debris around the button opening may cause sticking.",
 };
 
 export interface ResolvedStepVisual {
@@ -166,6 +169,22 @@ export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): Res
         alt: VISUAL_ALT_OVERRIDES[step.visualSlot] ?? `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
         title: VISUAL_TITLES[step.visualSlot],
       };
+    }
+    // stopPryingButton replaces the generic buttonLayout diagram with a
+    // dedicated illustration for Edge Phantom Black. Other models haven't
+    // gotten their own dedicated version yet — fall back to their existing
+    // (still accurate) buttonLayout diagram under this step's clearer title,
+    // rather than dropping a diagram they already had.
+    if (step.visualSlot === "stopPryingButton") {
+      const fallbackSrc = watch.manualVisuals?.buttonLayout;
+      if (fallbackSrc) {
+        return {
+          type: "image",
+          src: fallbackSrc,
+          alt: `${VISUAL_TITLES.buttonLayout} — ${watch.name} manual diagram`,
+          title: VISUAL_TITLES.stopPryingButton,
+        };
+      }
     }
   }
   const shared = sharedStepDiagrams[step.slug];
@@ -530,7 +549,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Don't pry the button out with a fingernail or anything sharp — that risks causing more damage. A physically sticking button is usually debris around the button opening, not a sensor or software fault.",
         ],
-        visualSlot: "buttonLayout",
+        visualSlot: "stopPryingButton",
       },
       {
         slug: "clean-button-openings",
