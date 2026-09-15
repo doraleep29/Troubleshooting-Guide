@@ -31,7 +31,8 @@ export type ManualVisualSlot =
   | "fullyChargeThenRestart"
   | "checkFirmwareUpdateBattery"
   | "lowerScreenBrightness"
-  | "turnOnBatterySaver";
+  | "turnOnBatterySaver"
+  | "settingsResetOnOwn";
 
 export interface WatchModel {
   key: string;
@@ -118,11 +119,11 @@ export const WATCH_MODELS: WatchModel[] = [
     // removeBluetoothCompetition/setExpectationsMargin/factoryResetAccuracy/
     // avoidExcludedWaterConditions/stopPryingButton/cleanButtonOpenings/
     // resetDeviceInApp/keepAppRunningBackground/fullyChargeThenRestart/
-    // checkFirmwareUpdateBattery/lowerScreenBrightness/turnOnBatterySaver
-    // are Phantom-Black-specific for now: each diagram renders this exact
-    // case finish, and Armor Silver hasn't gotten its own versions yet —
-    // falls back to the "not added yet" placeholder there rather than
-    // showing the wrong-colored case.
+    // checkFirmwareUpdateBattery/lowerScreenBrightness/turnOnBatterySaver/
+    // settingsResetOnOwn are Phantom-Black-specific for now: each diagram
+    // renders this exact case finish, and Armor Silver hasn't gotten its own
+    // versions yet — falls back to the "not added yet" placeholder there
+    // rather than showing the wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source--edge.png",
@@ -140,6 +141,7 @@ export const WATCH_MODELS: WatchModel[] = [
       checkFirmwareUpdateBattery: "/troubleshooting-diagrams/edge/check-firmware-update.png",
       lowerScreenBrightness: "/troubleshooting-diagrams/edge/lower-screen-brightness.png",
       turnOnBatterySaver: "/troubleshooting-diagrams/edge/turn-on-battery-saver.png",
+      settingsResetOnOwn: "/troubleshooting-diagrams/edge/settings-reset-on-own.png",
     },
   },
   {

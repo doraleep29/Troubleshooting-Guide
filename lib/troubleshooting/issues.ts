@@ -49,6 +49,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   checkFirmwareUpdateBattery: "Check for a firmware update",
   lowerScreenBrightness: "Lower screen brightness",
   turnOnBatterySaver: "Turn on battery-saving mode",
+  settingsResetOnOwn: "If it resets on its own",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -84,6 +85,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
   turnOnBatterySaver:
     "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
+  settingsResetOnOwn:
+    "If Bluetooth or the phone network disconnects, reconnect the phone and Carbinox Edge and then reapply the time, distance and temperature settings.",
 };
 
 export interface ResolvedStepVisual {
@@ -564,6 +567,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Keeps resetting",
         title: "If it resets on its own",
         instructions: ["A dropped Bluetooth connection or phone network issue can cause these settings to revert — reapply after reconnecting."],
+        visualSlot: "settingsResetOnOwn",
       },
     ],
   },
