@@ -47,6 +47,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   keepAppRunningBackground: "Keep the app running in the background",
   fullyChargeThenRestart: "Fully charge it, then restart",
   checkFirmwareUpdateBattery: "Check for a firmware update",
+  lowerScreenBrightness: "Lower screen brightness",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -78,6 +79,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Charge the Carbinox Edge to 100 percent, restart it, and observe the battery percentage over the next few hours.",
   checkFirmwareUpdateBattery:
     "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
+  lowerScreenBrightness:
+    "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
 };
 
 export interface ResolvedStepVisual {
@@ -488,6 +491,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Lower brightness",
         title: "Lower screen brightness",
         instructions: ["Reduce brightness and turn off notifications that aren't needed — the two biggest drains on daily battery life."],
+        visualSlot: "lowerScreenBrightness",
       },
       {
         slug: "battery-saver",
