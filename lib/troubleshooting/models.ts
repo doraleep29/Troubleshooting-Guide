@@ -24,7 +24,8 @@ export type ManualVisualSlot =
   | "setExpectationsMargin"
   | "factoryResetAccuracy"
   | "avoidExcludedWaterConditions"
-  | "stopPryingButton";
+  | "stopPryingButton"
+  | "cleanButtonOpenings";
 
 export interface WatchModel {
   key: string;
@@ -109,10 +110,10 @@ export const WATCH_MODELS: WatchModel[] = [
     ...EDGE_SHARED,
     // powerSource/forceBootWhileCharging/checkProximityBackgroundApp/
     // removeBluetoothCompetition/setExpectationsMargin/factoryResetAccuracy/
-    // avoidExcludedWaterConditions/stopPryingButton are Phantom-Black-
-    // specific for now: each diagram renders this exact case finish, and
-    // Armor Silver hasn't gotten its own versions yet — falls back to the
-    // "not added yet" placeholder there rather than showing the
+    // avoidExcludedWaterConditions/stopPryingButton/cleanButtonOpenings are
+    // Phantom-Black-specific for now: each diagram renders this exact case
+    // finish, and Armor Silver hasn't gotten its own versions yet — falls
+    // back to the "not added yet" placeholder there rather than showing the
     // wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
@@ -124,6 +125,7 @@ export const WATCH_MODELS: WatchModel[] = [
       factoryResetAccuracy: "/troubleshooting-diagrams/edge/factory-reset-accuracy.png",
       avoidExcludedWaterConditions: "/troubleshooting-diagrams/edge/avoid-excluded-water-conditions.png",
       stopPryingButton: "/troubleshooting-diagrams/edge/stop-prying-button.png",
+      cleanButtonOpenings: "/troubleshooting-diagrams/edge/clean-button-openings.png",
     },
   },
   {

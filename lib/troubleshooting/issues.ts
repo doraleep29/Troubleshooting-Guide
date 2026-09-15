@@ -42,6 +42,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   factoryResetAccuracy: "Reset to factory settings if it persists",
   avoidExcludedWaterConditions: "Avoid the excluded conditions going forward",
   stopPryingButton: "Stop prying or forcing the button",
+  cleanButtonOpenings: "Clean around the button openings",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -63,6 +64,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Avoid exposing the Carbinox Edge to saunas and hot showers because heat and steam can affect its seals over time.",
   stopPryingButton:
     "Do not pry the Carbinox Edge button with a fingernail or sharp object; debris around the button opening may cause sticking.",
+  cleanButtonOpenings:
+    "Power off the Carbinox Edge, wipe around the affected button with a clean soft dry cloth, gently press and release it several times, then turn the watch on and test it.",
 };
 
 export interface ResolvedStepVisual {
@@ -560,6 +563,7 @@ export const ISSUES: TroubleshootingIssue[] = [
           "While cleaning, gently press and release the button several times to help loosen any debris — don't use anything sharp.",
           "Once it's clean and dry, turn the watch back on and test the button again.",
         ],
+        visualSlot: "cleanButtonOpenings",
       },
       {
         slug: "restart-carefully",
