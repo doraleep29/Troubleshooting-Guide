@@ -37,6 +37,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   powerSource: "Rule out the power source",
   forceBootWhileCharging: "Force a boot while still on the charger",
   checkProximityBackgroundApp: "Check proximity and background app",
+  removeBluetoothCompetition: "Remove other Bluetooth competition",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -48,6 +49,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
   checkProximityBackgroundApp:
     "Keep the Carbinox Edge and phone within 10 meters, allow the companion app to run in the background, and re-pair if disconnected.",
+  removeBluetoothCompetition:
+    "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
 };
 
 export interface ResolvedStepVisual {
@@ -319,6 +322,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "If the phone is already connected to another Bluetooth device, or recently ran low on battery, the watch connection can drop.",
         ],
+        visualSlot: "removeBluetoothCompetition",
       },
       {
         slug: "remove-readd",
