@@ -35,6 +35,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   otaUpdate: "Firmware update",
   bluetoothCalling: "Bluetooth calling setup",
   powerSource: "Rule out the power source",
+  forceBootWhileCharging: "Force a boot while still on the charger",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -42,6 +43,8 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
 const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
+  forceBootWhileCharging:
+    "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
 };
 
 export interface ResolvedStepVisual {
@@ -215,6 +218,7 @@ export const ISSUES: TroubleshootingIssue[] = [
           "If the screen is still completely black, clean the magnetic contacts on the watch and the charger, connect it to a low-power source, and leave it plugged in undisturbed for 30–60 minutes.",
           "While it's still attached to the charger, press and hold the power/SEL button for 30–40 continuous seconds — longer than a normal restart press. This can force a hard restart of the power-control chip if the watch is stuck in a deep discharge state.",
         ],
+        visualSlot: "forceBootWhileCharging",
       },
     ],
   },
