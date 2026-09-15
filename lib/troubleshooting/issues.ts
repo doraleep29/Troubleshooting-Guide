@@ -43,20 +43,110 @@ export interface ResolvedStepVisual {
   title: string;
 }
 
-// Resolves a step's requested visual slot against the selected watch's own
-// manual crops. Returns null (not a placeholder image) when that model's
-// manual hasn't been processed yet for this slot — the UI shows an honest
-// "not added yet" state rather than borrowing another model's diagram.
+// Diagrams shared across models for steps that don't depend on a model's
+// own manual (generic app/process steps, plus a few hardware steps that
+// only have an Edge-hardware version so far — see the README note on this
+// folder). Keyed by step slug, checked only after a model-specific
+// visualSlot comes up empty, so a model's own manual diagram always wins.
+//
+// `groupKeys` restricts a shared diagram to watches it's actually true for.
+// Most of these are generic enough to show everywhere, but a couple bake a
+// specific hardware fact into the image itself (X-Ranger has 2 buttons, not
+// 4; Edge's water guidance is its own real excluded-conditions list, not a
+// generic "swim carefully" line) — showing those to the wrong model isn't a
+// cosmetic mismatch, it's the image asserting something false. Leave
+// `groupKeys` unset only when the image makes no model-specific claim.
+export const sharedStepDiagrams: Record<
+  string,
+  { src: string; alt: string; title: string; groupKeys?: string[] }
+> = {
+  "hard-reset-all-buttons": {
+    src: "/troubleshooting-diagrams/shared/hard-reset-all-buttons.png",
+    alt: "Press and hold all 4 buttons for 15–30 seconds",
+    title: "Hard reset with all buttons",
+    // X-Ranger has 2 buttons (Power + Sports key) — this image says "4
+    // buttons," which is only true for the other groups.
+    groupKeys: ["edge", "blaze", "vortex"],
+  },
+  "silent-modes": {
+    src: "/troubleshooting-diagrams/shared/silent-modes.png",
+    alt: "Turn off Silent Mode and Do Not Disturb on the phone and watch",
+    title: "Check both silent modes",
+  },
+  "complete-profile": {
+    src: "/troubleshooting-diagrams/shared/complete-profile.png",
+    alt: "Complete weight, age, and height in the companion app profile",
+    title: "Complete the profile",
+  },
+  "dry-out": {
+    src: "/troubleshooting-diagrams/shared/dry-out.png",
+    alt: "Shake out water, wipe the watch, and let it dry before charging",
+    title: "Dry it out before charging",
+  },
+  "temperature-units": {
+    src: "/troubleshooting-diagrams/shared/temperature-units.png",
+    alt: "Change the weather temperature unit between Celsius and Fahrenheit",
+    title: "Change temperature units",
+  },
+  "document-damage": {
+    src: "/troubleshooting-diagrams/shared/document-damage.png",
+    alt: "Take a clear photo of the damaged glass, button, or strap",
+    title: "Document the damage",
+  },
+  "app-permissions": {
+    src: "/troubleshooting-diagrams/shared/app-permissions.png",
+    alt: "Enable call, SMS, and notification permissions for the companion app",
+    title: "App permissions",
+  },
+  "check-fit": {
+    src: "/troubleshooting-diagrams/shared/check-fit.png",
+    alt: "Wear the watch snug, flat, and above the wrist bone",
+    title: "Check the fit",
+  },
+  "rating-coverage": {
+    src: "/troubleshooting-diagrams/shared/rating-coverage.png",
+    alt: "Edge's real water-resistance guidance — saunas, hot showers, high-pressure water, corrosive liquids, and UV exposure",
+    title: "What the rating actually covers",
+    // This image is captioned "EDGE WATER GUIDANCE" with Edge's specific
+    // excluded-conditions list — showing it under Blaze/Vortex/X-Ranger
+    // would contradict those models' own (different, correct) water
+    // guidance text right next to it. Edge only until per-model versions
+    // exist.
+    groupKeys: ["edge"],
+  },
+  "time-distance-units": {
+    src: "/troubleshooting-diagrams/shared/time-distance-units.png",
+    alt: "Change 12/24-hour time format and miles/kilometers distance units",
+    title: "Time format & distance units",
+  },
+  "check-coverage": {
+    src: "/troubleshooting-diagrams/shared/check-coverage.png",
+    alt: "Strap, button, and glass damage is covered under the Lifetime Warranty",
+    title: "Check what's covered",
+  },
+};
+
+// Resolves a step's visual: the selected watch's own manual crop first (each
+// model's manual looks different), then a shared cross-model diagram for
+// generic steps, then null so the UI shows an honest "not added yet" state
+// rather than borrowing another model's or another step's diagram.
 export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): ResolvedStepVisual | null {
-  if (!step.visualSlot) return null;
-  const src = watch.manualVisuals?.[step.visualSlot];
-  if (!src) return null;
-  return {
-    type: "image",
-    src,
-    alt: `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
-    title: VISUAL_TITLES[step.visualSlot],
-  };
+  if (step.visualSlot) {
+    const src = watch.manualVisuals?.[step.visualSlot];
+    if (src) {
+      return {
+        type: "image",
+        src,
+        alt: `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
+        title: VISUAL_TITLES[step.visualSlot],
+      };
+    }
+  }
+  const shared = sharedStepDiagrams[step.slug];
+  if (shared && (!shared.groupKeys || shared.groupKeys.includes(watch.groupKey))) {
+    return { type: "image", src: shared.src, alt: shared.alt, title: shared.title };
+  }
+  return null;
 }
 
 export const ISSUES: TroubleshootingIssue[] = [

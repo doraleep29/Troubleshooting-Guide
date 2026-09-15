@@ -54,6 +54,25 @@ China"), so its `chargingAlignment`/`chargingPort` still point at the raw
 manual crop until a corrected recreation exists — never swap those back to
 the recreated pack without checking the engraved text first.
 
+`getStepVisual()` falls back to `sharedStepDiagrams` (keyed by step slug, in
+`public/troubleshooting-diagrams/shared/`) when a step has no `visualSlot`,
+or its slot is empty for the selected watch — generic process/app steps
+(`silent-modes`, `complete-profile`, `temperature-units`, `time-distance-units`,
+`app-permissions`, `check-coverage`) that don't depend on watch hardware at
+all. **Known interim gap:** `hard-reset-all-buttons`, `check-fit`, `dry-out`,
+`document-damage`, and `rating-coverage` are also served from this shared
+folder right now, but those five actually do depend on hardware (button
+count/position, case shape, water rating) — the current images only depict
+the real Edge hardware and Edge's own water guidance, so a Blaze/Vortex/
+X-Ranger customer sees an accurate diagram of the wrong model on those five
+steps. Model-specific versions for Blaze Type R, Blaze Type S, Vortex, and
+X-Ranger are expected to replace the shared fallback for those five slugs —
+move them to each model's own `manualVisuals` once those exist, the same way
+every other hardware-dependent slot works. `proximity-background` is still
+unset (shows the placeholder) because the one draft image for it stated the
+wrong Bluetooth range (1–2m instead of the documented ~10m) and was held back
+rather than shipped with a wrong number.
+
 ## Routing
 
 `/` — pick a watch. `/troubleshooting/[model]` — pick an issue for that
