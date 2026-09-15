@@ -20,7 +20,8 @@ export type ManualVisualSlot =
   | "powerSource"
   | "forceBootWhileCharging"
   | "checkProximityBackgroundApp"
-  | "removeBluetoothCompetition";
+  | "removeBluetoothCompetition"
+  | "setExpectationsMargin";
 
 export interface WatchModel {
   key: string;
@@ -104,16 +105,18 @@ export const WATCH_MODELS: WatchModel[] = [
     imageUrl: "/watches/edge-phantom-black.png",
     ...EDGE_SHARED,
     // powerSource/forceBootWhileCharging/checkProximityBackgroundApp/
-    // removeBluetoothCompetition are Phantom-Black-specific for now: each
-    // diagram renders this exact case finish, and Armor Silver hasn't gotten
-    // its own versions yet — falls back to the "not added yet" placeholder
-    // there rather than showing the wrong-colored case.
+    // removeBluetoothCompetition/setExpectationsMargin are Phantom-Black-
+    // specific for now: each diagram renders this exact case finish, and
+    // Armor Silver hasn't gotten its own versions yet — falls back to the
+    // "not added yet" placeholder there rather than showing the
+    // wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source--edge.png",
       forceBootWhileCharging: "/troubleshooting-diagrams/edge/force-boot-while-charging.png",
       checkProximityBackgroundApp: "/troubleshooting-diagrams/edge/check-proximity-background-app.png",
       removeBluetoothCompetition: "/troubleshooting-diagrams/edge/remove-bluetooth-competition.png",
+      setExpectationsMargin: "/troubleshooting-diagrams/edge/set-expectations-margin.png",
     },
   },
   {

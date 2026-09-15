@@ -38,6 +38,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   forceBootWhileCharging: "Force a boot while still on the charger",
   checkProximityBackgroundApp: "Check proximity and background app",
   removeBluetoothCompetition: "Remove other Bluetooth competition",
+  setExpectationsMargin: "Set expectations on margin",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -51,6 +52,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Keep the Carbinox Edge and phone within 10 meters, allow the companion app to run in the background, and re-pair if disconnected.",
   removeBluetoothCompetition:
     "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
+  setExpectationsMargin:
+    "A Carbinox Edge wrist tracker may show a 5–15 percent margin compared with a medical device, which does not necessarily indicate a defect.",
 };
 
 export interface ResolvedStepVisual {
@@ -390,6 +393,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Expected margin",
         title: "Set expectations on margin",
         instructions: ["A 5–15% error margin versus a medical device is normal for any wrist tracker — this isn't necessarily a defect."],
+        visualSlot: "setExpectationsMargin",
       },
       {
         slug: "factory-reset",
