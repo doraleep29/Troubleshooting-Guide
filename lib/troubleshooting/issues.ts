@@ -48,6 +48,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   fullyChargeThenRestart: "Fully charge it, then restart",
   checkFirmwareUpdateBattery: "Check for a firmware update",
   lowerScreenBrightness: "Lower screen brightness",
+  turnOnBatterySaver: "Turn on battery-saving mode",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -81,6 +82,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
   lowerScreenBrightness:
     "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
+  turnOnBatterySaver:
+    "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
 };
 
 export interface ResolvedStepVisual {
@@ -498,6 +501,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Battery saver",
         title: "Turn on battery-saving mode",
         instructions: ["Enable the built-in battery saver from the watch or the app."],
+        visualSlot: "turnOnBatterySaver",
       },
       {
         slug: "bluetooth-calling-usage",
