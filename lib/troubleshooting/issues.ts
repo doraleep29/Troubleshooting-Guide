@@ -34,6 +34,14 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   gestures: "Watch gestures",
   otaUpdate: "Firmware update",
   bluetoothCalling: "Bluetooth calling setup",
+  powerSource: "Rule out the power source",
+};
+
+// Exact alt text required for a specific slot, overriding the generated
+// "<title> — <watch name> manual diagram" pattern below.
+const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
+  powerSource:
+    "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
 };
 
 export interface ResolvedStepVisual {
@@ -137,7 +145,7 @@ export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): Res
       return {
         type: "image",
         src,
-        alt: `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
+        alt: VISUAL_ALT_OVERRIDES[step.visualSlot] ?? `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
         title: VISUAL_TITLES[step.visualSlot],
       };
     }
@@ -183,6 +191,7 @@ export const ISSUES: TroubleshootingIssue[] = [
           "Try a different USB port, wall adapter, or location. If it charges from one source but not another, it's a voltage/power-source issue, not the watch.",
           "Avoid high-wattage fast-charging bricks (20W+ USB-C/PD wall chargers) — these can trigger a safety shutdown on the watch's charging circuit. Use a low-power source instead: a standard computer USB port, an older 5V/1A wall adapter, or a low-wattage power bank.",
         ],
+        visualSlot: "powerSource",
         additionalHelp: [
           {
             title: "Cable or adapter issue?",
