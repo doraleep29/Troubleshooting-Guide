@@ -40,6 +40,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   removeBluetoothCompetition: "Remove other Bluetooth competition",
   setExpectationsMargin: "Set expectations on margin",
   factoryResetAccuracy: "Reset to factory settings if it persists",
+  avoidExcludedWaterConditions: "Avoid the excluded conditions going forward",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -57,6 +58,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "A Carbinox Edge wrist tracker may show a 5–15 percent margin compared with a medical device, which does not necessarily indicate a defect.",
   factoryResetAccuracy:
     "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
+  avoidExcludedWaterConditions:
+    "Avoid exposing the Carbinox Edge to saunas and hot showers because heat and steam can affect its seals over time.",
 };
 
 export interface ResolvedStepVisual {
@@ -484,6 +487,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Avoid going forward",
         title: "Avoid the excluded conditions going forward",
         instructions: ["Saunas and hot showers affect the seal over time even on watches that handle swimming fine."],
+        visualSlot: "avoidExcludedWaterConditions",
       },
     ],
   },
