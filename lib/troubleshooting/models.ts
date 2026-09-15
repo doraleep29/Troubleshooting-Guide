@@ -21,7 +21,8 @@ export type ManualVisualSlot =
   | "forceBootWhileCharging"
   | "checkProximityBackgroundApp"
   | "removeBluetoothCompetition"
-  | "setExpectationsMargin";
+  | "setExpectationsMargin"
+  | "factoryResetAccuracy";
 
 export interface WatchModel {
   key: string;
@@ -105,11 +106,11 @@ export const WATCH_MODELS: WatchModel[] = [
     imageUrl: "/watches/edge-phantom-black.png",
     ...EDGE_SHARED,
     // powerSource/forceBootWhileCharging/checkProximityBackgroundApp/
-    // removeBluetoothCompetition/setExpectationsMargin are Phantom-Black-
-    // specific for now: each diagram renders this exact case finish, and
-    // Armor Silver hasn't gotten its own versions yet — falls back to the
-    // "not added yet" placeholder there rather than showing the
-    // wrong-colored case.
+    // removeBluetoothCompetition/setExpectationsMargin/factoryResetAccuracy
+    // are Phantom-Black-specific for now: each diagram renders this exact
+    // case finish, and Armor Silver hasn't gotten its own versions yet —
+    // falls back to the "not added yet" placeholder there rather than
+    // showing the wrong-colored case.
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source--edge.png",
@@ -117,6 +118,7 @@ export const WATCH_MODELS: WatchModel[] = [
       checkProximityBackgroundApp: "/troubleshooting-diagrams/edge/check-proximity-background-app.png",
       removeBluetoothCompetition: "/troubleshooting-diagrams/edge/remove-bluetooth-competition.png",
       setExpectationsMargin: "/troubleshooting-diagrams/edge/set-expectations-margin.png",
+      factoryResetAccuracy: "/troubleshooting-diagrams/edge/factory-reset-accuracy.png",
     },
   },
   {

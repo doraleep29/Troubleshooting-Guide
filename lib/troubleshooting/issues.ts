@@ -39,6 +39,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   checkProximityBackgroundApp: "Check proximity and background app",
   removeBluetoothCompetition: "Remove other Bluetooth competition",
   setExpectationsMargin: "Set expectations on margin",
+  factoryResetAccuracy: "Reset to factory settings if it persists",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -54,6 +55,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
     "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
   setExpectationsMargin:
     "A Carbinox Edge wrist tracker may show a 5–15 percent margin compared with a medical device, which does not necessarily indicate a defect.",
+  factoryResetAccuracy:
+    "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
 };
 
 export interface ResolvedStepVisual {
@@ -400,6 +403,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Factory reset",
         title: "Reset to factory settings if it persists",
         instructions: ["If accuracy is still clearly off after the above, reset to factory settings and set up again."],
+        visualSlot: "factoryResetAccuracy",
       },
     ],
   },
