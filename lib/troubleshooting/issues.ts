@@ -54,14 +54,21 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
 };
 
 // Exact alt text required for a specific slot, overriding the generated
-// "<title> — <watch name> manual diagram" pattern below.
-const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string>> = {
+// "<title> — <watch name> manual diagram" pattern below. A slot whose
+// diagram differs by watch color/variant (e.g. checkProximityBackgroundApp,
+// with separate Phantom Black and Armor Silver assets) keys its override by
+// watch.key instead of a single string.
+const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Record<string, string>>>> = {
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
     "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
-  checkProximityBackgroundApp:
-    "Keep the Carbinox Edge and phone within 10 meters, allow the companion app to run in the background, and re-pair if disconnected.",
+  checkProximityBackgroundApp: {
+    edge_phantom_black:
+      "Keep the Carbinox Edge and phone within 10 meters, allow the companion app to run in the background, and re-pair if disconnected.",
+    edge_armor_silver:
+      "Keep the Edge Armor Silver watch within 10 meters of the phone and allow the companion app to run in the background.",
+  },
   removeBluetoothCompetition:
     "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
   setExpectationsMargin:
@@ -198,6 +205,15 @@ const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
 // model's manual looks different), then a shared cross-model diagram for
 // generic steps, then null so the UI shows an honest "not added yet" state
 // rather than borrowing another model's or another step's diagram.
+// Resolves a VISUAL_ALT_OVERRIDES entry, which is either one string shared
+// by every watch using that slot, or a per-watch.key map for slots whose
+// diagram (and wording) differs by color/variant.
+function resolveAltOverride(slot: ManualVisualSlot, watch: WatchModel): string | undefined {
+  const override = VISUAL_ALT_OVERRIDES[slot];
+  if (typeof override === "string") return override;
+  return override?.[watch.key];
+}
+
 export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): ResolvedStepVisual | null {
   if (step.visualSlot) {
     const src = watch.manualVisuals?.[step.visualSlot];
@@ -205,7 +221,7 @@ export function getStepVisual(step: TroubleshootingStep, watch: WatchModel): Res
       return {
         type: "image",
         src,
-        alt: VISUAL_ALT_OVERRIDES[step.visualSlot] ?? `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
+        alt: resolveAltOverride(step.visualSlot, watch) ?? `${VISUAL_TITLES[step.visualSlot]} — ${watch.name} manual diagram`,
         title: VISUAL_TITLES[step.visualSlot],
       };
     }

@@ -154,6 +154,15 @@ export const WATCH_MODELS: WatchModel[] = [
     variantName: "Armor Silver",
     imageUrl: "/watches/edge-armor-silver.png",
     ...EDGE_SHARED,
+    // checkProximityBackgroundApp is Armor-Silver-specific: this diagram
+    // renders the real Armor Silver case finish, kept in its own
+    // troubleshooting-diagrams/edge-armor-silver/ folder (distinct from
+    // Phantom Black's asset of the same concept under troubleshooting-
+    // diagrams/edge/) so neither color's diagram is shared with the other.
+    manualVisuals: {
+      ...EDGE_SHARED.manualVisuals,
+      checkProximityBackgroundApp: "/troubleshooting-diagrams/edge-armor-silver/check-proximity-background-app.png",
+    },
   },
   {
     key: "blaze_type_r",
