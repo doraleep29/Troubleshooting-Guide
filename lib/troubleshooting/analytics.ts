@@ -11,8 +11,7 @@ export type AnalyticsEvent =
   | "step_completed"
   | "step_failed"
   | "troubleshooting_resolved"
-  | "troubleshooting_exhausted"
-  | "support_escalation_clicked";
+  | "troubleshooting_exhausted";
 
 let sessionId: string | null = null;
 

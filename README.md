@@ -82,13 +82,16 @@ browser back/forward. `.../resolved` and `.../escalate` are reserved step
 slugs for the two terminal states. An unknown model/issue/step slug shows a
 friendly recovery card instead of a hard 404.
 
-## Escalation
+## When the guide doesn't resolve it
 
-When the guided steps don't resolve it, the guide shows a "Get an agent"
-button linking to the Zendesk request form
-(`https://carbinox.zendesk.com/hc/en-us/requests/new`) — no ticket is
-created automatically from here, and no replacement is ever auto-approved.
-This keeps the project fully static/serverless with nothing to configure.
+The guide is meant to be self-service end to end — there's no "contact
+support" push anywhere in it. If a customer works through every step for
+their issue and it's still not fixed, the last step just says so plainly
+("You've reached the last step") with no support link or button, and offers
+starting a new lookup for a different watch/issue. The one exception is the
+physical-damage flow's own "Contact support for the replacement" step,
+whose entire purpose is starting a warranty replacement request — that's
+unrelated to a failed troubleshooting attempt and is unchanged.
 
 ## Analytics
 
@@ -96,8 +99,8 @@ This keeps the project fully static/serverless with nothing to configure.
 logging only, no backend) for the lifecycle events a real analytics
 pipeline would want: `troubleshooting_started`, `watch_selected`,
 `issue_selected`, `step_viewed`, `step_completed`, `step_failed`,
-`troubleshooting_resolved`, `troubleshooting_exhausted`,
-`support_escalation_clicked`. No PII is ever passed in the payload.
+`troubleshooting_resolved`, `troubleshooting_exhausted`. No PII is ever
+passed in the payload.
 
 ## Getting started
 

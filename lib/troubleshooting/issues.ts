@@ -364,7 +364,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Still not working",
         title: "If it's still frozen or blacked out",
         instructions: [
-          "This qualifies for a free replacement under the 45-day guarantee if within the first 45 days of purchase — contact support directly rather than continuing to troubleshoot.",
+          "This qualifies for a free replacement under the 45-day guarantee if within the first 45 days of purchase. This is the last step for this issue.",
         ],
       },
     ],

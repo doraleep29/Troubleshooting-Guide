@@ -11,7 +11,7 @@ import { InstructionVisualPanel } from "@/components/troubleshoot/visual-panel";
 import { StepFocus } from "@/components/troubleshoot/step-focus";
 import { OutcomeTracker } from "@/components/troubleshoot/outcome-tracker";
 import { FixedCard } from "@/components/troubleshoot/fixed-card";
-import { ContactCard } from "@/components/contact-card";
+import { LastStepCard } from "@/components/last-step-card";
 import { InvalidRouteCard } from "@/components/troubleshoot/invalid-route-card";
 
 function Shell({
@@ -81,7 +81,7 @@ export default async function FixStepPage({
     return (
       <Shell activeIndex={2} watchSlug={watch.slug}>
         <OutcomeTracker event="troubleshooting_exhausted" modelKey={watch.key} issueKey={issue.key} />
-        <ContactCard watch={watch} issue={issue} startOverHref="/" />
+        <LastStepCard watch={watch} startOverHref="/" />
       </Shell>
     );
   }

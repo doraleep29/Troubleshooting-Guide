@@ -41,7 +41,7 @@ export function ResolutionFeedback({
       </div>
       {!isLast && (
         <p className="mt-2.5 text-[12px] text-[var(--support-ink-dim)]">
-          Didn&apos;t work? There&apos;s another step to try before contacting support.
+          Didn&apos;t work? There&apos;s another step to try.
         </p>
       )}
     </div>
