@@ -77,8 +77,14 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
   },
   chargeAndRetryScreen:
     "Connect the Edge Phantom Black to its charger, charge it for 30–60 minutes, try turning it on, and test another charging location if possible.",
-  otaUpdateScreen:
-    "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge Phantom Black.",
+  otaUpdateScreen: {
+    edge_phantom_black:
+      "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge Phantom Black.",
+    // Reuses the Phantom Black photo, which shows that case's dark finish —
+    // kept color-neutral rather than claiming Armor Silver's brushed-steel
+    // look that isn't what's actually pictured.
+    edge_armor_silver: "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge watch.",
+  },
   clearAppDataRepair:
     "Phone clearing app data beside an Edge Phantom Black watch displaying Bluetooth pairing mode.",
   stillFrozenReplacement:

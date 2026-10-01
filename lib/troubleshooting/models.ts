@@ -186,6 +186,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // distinct from Phantom Black's own powerSource image.
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source.png",
       forceBootWhileCharging: "/troubleshooting-diagrams/edge/boot-while-charging.png",
+      // Same firmware-update asset as Phantom Black — a generic companion-app
+      // screen plus the watch's update progress, not a color-specific case
+      // finish, so it's intentionally shared rather than duplicated.
+      otaUpdateScreen: "/troubleshooting-diagrams/edge/firmware-update.png",
     },
   },
   {
