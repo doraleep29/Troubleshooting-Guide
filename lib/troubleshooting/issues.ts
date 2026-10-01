@@ -140,8 +140,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "Customer wearing an Edge Phantom Black wrist tracker while a healthcare professional takes a separate clinical measurement.",
     edge_armor_silver: "An Edge Armor Silver showing a heart-rate reading of 78 beside a separate monitor showing 82.",
   },
-  factoryResetAccuracy:
-    "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
+  factoryResetAccuracy: {
+    edge_phantom_black:
+      "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
+    edge_armor_silver: "Resetting an Edge Armor Silver to factory settings and pairing it again by scanning its QR code.",
+  },
   avoidExcludedWaterConditions:
     "Avoid exposing the Carbinox Edge to saunas and hot showers because heat and steam can affect its seals over time.",
   stopPryingButton:

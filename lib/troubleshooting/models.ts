@@ -219,6 +219,9 @@ export const WATCH_MODELS: WatchModel[] = [
       // kept under its own filename so it doesn't overwrite Phantom Black's
       // existing keep-app-running-background.png.
       keepAppRunningBackground: "/troubleshooting-diagrams/edge/keep-app-running-background--armor-silver.png",
+      // Armor-Silver-specific factory-reset photo (its own case finish),
+      // distinct from Phantom Black's own factoryResetAccuracy image.
+      factoryResetAccuracy: "/troubleshooting-diagrams/edge/factory-reset-setup-again.png",
     },
   },
   {
