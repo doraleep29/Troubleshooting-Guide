@@ -200,6 +200,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // under its own filename so it doesn't overwrite Phantom Black's
       // existing still-frozen-replacement.png.
       stillFrozenReplacement: "/troubleshooting-diagrams/edge/still-frozen-replacement--armor-silver.png",
+      // Armor-Silver-specific pair-via-app photo (its own case finish), kept
+      // under its own filename so it doesn't overwrite Phantom Black's
+      // existing pair-via-app.png.
+      pairViaApp: "/troubleshooting-diagrams/edge/pair-via-app--armor-silver.png",
     },
   },
   {

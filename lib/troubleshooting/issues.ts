@@ -94,8 +94,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "An unresponsive Edge Phantom Black watch with a black screen being packed for return beside a working replacement watch.",
     edge_armor_silver: "A black-screen Edge Armor Silver beside a working replacement Edge Armor Silver.",
   },
-  pairViaApp:
-    "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
+  pairViaApp: {
+    edge_phantom_black:
+      "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
+    edge_armor_silver: "Scanning the pairing QR code on an Edge Armor Silver watch through the companion app.",
+  },
   removeReaddDevice:
     "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
   bluetoothCallingBattery:
