@@ -161,8 +161,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
   },
   fullyChargeThenRestart:
     "Charge the Carbinox Edge to 100 percent, restart it, and observe the battery percentage over the next few hours.",
-  checkFirmwareUpdateBattery:
-    "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
+  checkFirmwareUpdateBattery: {
+    edge_phantom_black:
+      "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
+    edge_armor_silver: "Installing a firmware update from a phone onto an Edge Armor Silver watch.",
+  },
   lowerScreenBrightness:
     "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
   turnOnBatterySaver:

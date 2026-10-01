@@ -222,6 +222,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // Armor-Silver-specific factory-reset photo (its own case finish),
       // distinct from Phantom Black's own factoryResetAccuracy image.
       factoryResetAccuracy: "/troubleshooting-diagrams/edge/factory-reset-setup-again.png",
+      // Armor-Silver-specific firmware-update photo (its own case finish),
+      // kept under its own filename so it doesn't overwrite Phantom Black's
+      // existing check-firmware-update.png.
+      checkFirmwareUpdateBattery: "/troubleshooting-diagrams/edge/check-firmware-update--armor-silver.png",
     },
   },
   {
