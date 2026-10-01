@@ -99,8 +99,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
     edge_armor_silver: "Scanning the pairing QR code on an Edge Armor Silver watch through the companion app.",
   },
-  removeReaddDevice:
-    "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
+  removeReaddDevice: {
+    edge_phantom_black:
+      "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
+    edge_armor_silver: "Removing and re-adding an Edge Armor Silver through the companion app's device controls.",
+  },
   bluetoothCallingBattery:
     "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
   sendCloseUpVideo: {

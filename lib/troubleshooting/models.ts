@@ -208,6 +208,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // case finish), kept under its own filename so it doesn't overwrite
       // Phantom Black's existing remove-bluetooth-competition.png.
       removeBluetoothCompetition: "/troubleshooting-diagrams/edge/remove-bluetooth-competition--armor-silver.png",
+      // Armor-Silver-specific remove-and-readd photo (its own case finish),
+      // kept under its own filename so it doesn't overwrite Phantom Black's
+      // existing remove-and-readd.png.
+      removeReaddDevice: "/troubleshooting-diagrams/edge/remove-and-readd--armor-silver.png",
     },
   },
   {
