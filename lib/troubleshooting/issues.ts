@@ -53,6 +53,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   contactSupportReplacement: "Contact support for the replacement",
   chargeAndRetryScreen: "Make sure it has enough charge",
   otaUpdateScreen: "Check for a firmware update",
+  clearAppDataRepair: "Clear the app data and re-pair",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -69,6 +70,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "Connect the Edge Phantom Black to its charger, charge it for 30–60 minutes, try turning it on, and test another charging location if possible.",
   otaUpdateScreen:
     "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge Phantom Black.",
+  clearAppDataRepair:
+    "Phone clearing app data beside an Edge Phantom Black watch displaying Bluetooth pairing mode.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -370,6 +373,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "If the issue continues, go to your phone's Settings → Apps → {{companionApp}} → Storage → Clear Data, then reopen the app and reconnect the watch.",
         ],
+        visualSlot: "clearAppDataRepair",
       },
       {
         slug: "still-frozen",
