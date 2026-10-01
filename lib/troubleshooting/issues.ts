@@ -166,8 +166,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "Open Carbinox Max, select Device, choose Firmware Update, and install an update if one is available for the Carbinox Edge.",
     edge_armor_silver: "Installing a firmware update from a phone onto an Edge Armor Silver watch.",
   },
-  lowerScreenBrightness:
-    "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
+  lowerScreenBrightness: {
+    edge_phantom_black:
+      "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
+    edge_armor_silver: "Reducing screen brightness on a Carbinox Edge Armor Silver smartwatch",
+  },
   turnOnBatterySaver:
     "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
   settingsResetOnOwn:

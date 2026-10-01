@@ -226,6 +226,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // kept under its own filename so it doesn't overwrite Phantom Black's
       // existing check-firmware-update.png.
       checkFirmwareUpdateBattery: "/troubleshooting-diagrams/edge/check-firmware-update--armor-silver.png",
+      // Armor-Silver-specific lower-brightness photo (its own case finish),
+      // kept under its own filename so it doesn't overwrite Phantom Black's
+      // existing lower-screen-brightness.png.
+      lowerScreenBrightness: "/troubleshooting-diagrams/edge/lower-screen-brightness--armor-silver.png",
     },
   },
   {
