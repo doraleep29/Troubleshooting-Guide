@@ -51,6 +51,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   turnOnBatterySaver: "Turn on battery-saving mode",
   settingsResetOnOwn: "If it resets on its own",
   contactSupportReplacement: "Contact support for the replacement",
+  chargeAndRetryScreen: "Make sure it has enough charge",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -63,6 +64,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     edge_phantom_black:
       "Press and hold the yellow SEL button on the Edge Phantom Black for 3 seconds to power the watch on or off.",
   },
+  chargeAndRetryScreen:
+    "Connect the Edge Phantom Black to its charger, charge it for 30–60 minutes, try turning it on, and test another charging location if possible.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -203,6 +206,7 @@ const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
   stopPryingButton: "buttonLayout",
   fullyChargeThenRestart: "chargingAlignment",
   checkFirmwareUpdateBattery: "otaUpdate",
+  chargeAndRetryScreen: "chargingAlignment",
 };
 
 // Resolves a step's visual: the selected watch's own manual crop first (each
@@ -337,7 +341,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Connect it to the charging cable and let it charge for 30–60 minutes, then try turning it on again. If possible, try a different charging location too.",
         ],
-        visualSlot: "chargingAlignment",
+        visualSlot: "chargeAndRetryScreen",
       },
       {
         slug: "firmware-update",

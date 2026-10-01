@@ -33,7 +33,8 @@ export type ManualVisualSlot =
   | "lowerScreenBrightness"
   | "turnOnBatterySaver"
   | "settingsResetOnOwn"
-  | "contactSupportReplacement";
+  | "contactSupportReplacement"
+  | "chargeAndRetryScreen";
 
 export interface WatchModel {
   key: string;
@@ -145,6 +146,7 @@ export const WATCH_MODELS: WatchModel[] = [
       turnOnBatterySaver: "/troubleshooting-diagrams/edge/turn-on-battery-saver.png",
       settingsResetOnOwn: "/troubleshooting-diagrams/edge/settings-reset-on-own.png",
       contactSupportReplacement: "/troubleshooting-diagrams/edge/contact-support-replacement.png",
+      chargeAndRetryScreen: "/troubleshooting-diagrams/edge/charge-and-retry.png",
     },
   },
   {
