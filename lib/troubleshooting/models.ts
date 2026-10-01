@@ -193,6 +193,9 @@ export const WATCH_MODELS: WatchModel[] = [
       // Same reset-device asset as Phantom Black — a generic companion-app
       // screen, not a color-specific case finish.
       resetDeviceInApp: "/troubleshooting-diagrams/edge/reset-device-in-app.png",
+      // Armor-Silver-specific clear-app-data photo (its own case finish),
+      // distinct from Phantom Black's own clearAppDataRepair image.
+      clearAppDataRepair: "/troubleshooting-diagrams/edge/clear-app-data-repair.png",
     },
   },
   {

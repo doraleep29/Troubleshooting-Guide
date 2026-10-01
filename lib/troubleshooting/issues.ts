@@ -85,8 +85,10 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     // look that isn't what's actually pictured.
     edge_armor_silver: "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge watch.",
   },
-  clearAppDataRepair:
-    "Phone clearing app data beside an Edge Phantom Black watch displaying Bluetooth pairing mode.",
+  clearAppDataRepair: {
+    edge_phantom_black: "Phone clearing app data beside an Edge Phantom Black watch displaying Bluetooth pairing mode.",
+    edge_armor_silver: "Clearing an app's stored data from Android settings with an Edge Armor Silver watch ready to reconnect.",
+  },
   stillFrozenReplacement:
     "An unresponsive Edge Phantom Black watch with a black screen being packed for return beside a working replacement watch.",
   pairViaApp:
