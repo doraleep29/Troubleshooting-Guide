@@ -204,6 +204,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // under its own filename so it doesn't overwrite Phantom Black's
       // existing pair-via-app.png.
       pairViaApp: "/troubleshooting-diagrams/edge/pair-via-app--armor-silver.png",
+      // Armor-Silver-specific remove-bluetooth-competition photo (its own
+      // case finish), kept under its own filename so it doesn't overwrite
+      // Phantom Black's existing remove-bluetooth-competition.png.
+      removeBluetoothCompetition: "/troubleshooting-diagrams/edge/remove-bluetooth-competition--armor-silver.png",
     },
   },
   {

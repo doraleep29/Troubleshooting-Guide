@@ -127,8 +127,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     edge_armor_silver:
       "Keep the Edge Armor Silver watch within 10 meters of the phone and allow the companion app to run in the background.",
   },
-  removeBluetoothCompetition:
-    "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
+  removeBluetoothCompetition: {
+    edge_phantom_black: "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
+    edge_armor_silver:
+      "Closing wireless earbuds in their case so the phone can maintain its Bluetooth connection with an Edge Armor Silver watch.",
+  },
   setExpectationsMargin:
     "Customer wearing an Edge Phantom Black wrist tracker while a healthcare professional takes a separate clinical measurement.",
   factoryResetAccuracy:
