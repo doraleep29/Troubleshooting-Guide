@@ -715,6 +715,67 @@ export const ISSUES: TroubleshootingIssue[] = [
       },
     ],
   },
+  {
+    key: "CHARGING_RECOVERY",
+    slug: "charging-recovery",
+    label: "Stuck, unresponsive, or not charging properly",
+    description:
+      "A combined recovery flow for a watch that appears dead, stalls at a battery percentage, has an unresponsive screen, or doesn't seem to charge normally.",
+    steps: [
+      {
+        slug: "clean-charging-contacts",
+        shortLabel: "Clean contacts",
+        title: "Clean the charging contacts",
+        instructions: [
+          "Remove the watch from the charger, then carefully clean and completely dry the metal charging contacts on the back of the watch, as well as the contacts on the magnetic charging base.",
+          "Make sure there's no dirt, moisture, dust, or debris left between the contacts before reconnecting.",
+        ],
+      },
+      {
+        slug: "reconnect-and-charge",
+        shortLabel: "Reconnect & charge",
+        title: "Reconnect and charge",
+        instructions: [
+          "Use the original Carbinox charging base whenever possible, and make sure the magnetic contacts are correctly aligned with the watch.",
+          "Connect the charger to a reliable USB power source, then leave the watch completely undisturbed on the charger for 30–60 minutes.",
+        ],
+      },
+      {
+        slug: "force-restart-recovery",
+        shortLabel: "Force restart",
+        title: "Force-restart the watch",
+        instructions: [
+          "Remove the watch from the charger and press and hold all of the watch's buttons at the same time for about 15–30 seconds.",
+          "If this model's manual specifies a different force-restart combination, follow that instead.",
+        ],
+      },
+      {
+        slug: "charge-again-recovery",
+        shortLabel: "Charge again",
+        title: "Charge again",
+        instructions: [
+          "Place the watch back on the charger and leave it undisturbed, then check whether the charging percentage begins increasing or the screen becomes responsive again.",
+        ],
+      },
+      {
+        slug: "recovery-check",
+        shortLabel: "If it recovers",
+        title: "If the watch recovers",
+        instructions: [
+          "Let it charge to its highest available level, then restart it normally and check that the screen, buttons, and charging percentage are all functioning normally.",
+          "If it connects to {{companionApp}}, check for a firmware update before continuing with any further troubleshooting.",
+        ],
+      },
+      {
+        slug: "recovery-last-step",
+        shortLabel: "Still not working",
+        title: "If the problem continues",
+        instructions: [
+          "If the watch still shows no signs of life — no vibration, no charging indicator, no screen response, and no button response — after completing every step above, this is the last step for this issue.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function findIssueBySlug(slug: string): TroubleshootingIssue | undefined {

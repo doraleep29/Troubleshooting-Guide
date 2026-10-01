@@ -18,6 +18,7 @@ const ICON_BY_ISSUE: Record<string, IconKey> = {
   WATER: "water",
   UNITS: "clock",
   STRAP: "wrench",
+  CHARGING_RECOVERY: "power",
 };
 
 function IssueIcon({ icon }: { icon: IconKey }) {
