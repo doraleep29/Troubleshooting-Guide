@@ -9,6 +9,10 @@ export interface TroubleshootingStep {
   // / {{waterGuidance}} / {{companionApp}} placeholders, filled in from the
   // selected WatchModel — see interpolateStepInstructions().
   instructions: string[];
+  // Short caveat shown below the numbered instructions, not as a numbered
+  // step itself (e.g. a battery-impact warning). May contain the same
+  // {{...}} placeholders as instructions.
+  note?: string;
   // Which manual diagram this step wants — resolved per selected watch via
   // getStepVisual(step, watch), since the actual diagram differs per model.
   visualSlot?: ManualVisualSlot;
@@ -57,6 +61,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   stillFrozenReplacement: "If it's still frozen or blacked out",
   pairViaApp: "Pairing with the app",
   removeReaddDevice: "Pairing with the app",
+  bluetoothCallingBattery: "Bluetooth calling setup",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -81,6 +86,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
   removeReaddDevice:
     "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
+  bluetoothCallingBattery:
+    "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -225,6 +232,7 @@ const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
   otaUpdateScreen: "otaUpdate",
   pairViaApp: "pairingApp",
   removeReaddDevice: "pairingApp",
+  bluetoothCallingBattery: "bluetoothCalling",
 };
 
 // Resolves a step's visual: the selected watch's own manual crop first (each
@@ -557,8 +565,15 @@ export const ISSUES: TroubleshootingIssue[] = [
         slug: "bluetooth-calling-usage",
         shortLabel: "Bluetooth calling",
         title: "Check Bluetooth Calling usage",
-        instructions: ["If Bluetooth Calling is enabled and used often, it noticeably reduces battery life versus normal use."],
-        visualSlot: "bluetoothCalling",
+        instructions: [
+          "Connect the watch through {{companionApp}}.",
+          "Tap \"Pair\" in the app to enable Bluetooth calling.",
+          "If you use Android, confirm the Bluetooth pairing request on the watch.",
+          "Keep the phone icon enabled on the watch when you want to use Bluetooth calling.",
+        ],
+        note:
+          "Bluetooth calling can use additional battery. If you do not need calling from the watch, disable the feature to help preserve battery life.",
+        visualSlot: "bluetoothCallingBattery",
       },
     ],
   },

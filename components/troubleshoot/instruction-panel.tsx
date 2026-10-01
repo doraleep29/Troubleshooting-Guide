@@ -8,6 +8,7 @@ export function InstructionPanel({
   stepIndex,
   totalSteps,
   instructions,
+  note,
   prevHref,
 }: {
   issue: TroubleshootingIssue;
@@ -16,6 +17,7 @@ export function InstructionPanel({
   stepIndex: number;
   totalSteps: number;
   instructions: string[];
+  note?: string;
   prevHref: string | null;
 }) {
   return (
@@ -39,6 +41,8 @@ export function InstructionPanel({
           <li key={line}>{line}</li>
         ))}
       </ol>
+
+      {note && <p className="mt-3 text-[13px] leading-relaxed text-[var(--support-ink-dim)]">{note}</p>}
 
       <div className="mt-6 flex gap-2.5">
         {prevHref ? (

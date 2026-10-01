@@ -1,6 +1,6 @@
 import { findWatchBySlug } from "@/lib/troubleshooting/models";
 import { findIssueBySlug, getStepVisual } from "@/lib/troubleshooting/issues";
-import { interpolateInstructions } from "@/lib/interpolate";
+import { interpolateInstructions, interpolateOptionalText } from "@/lib/interpolate";
 import { SiteHeader } from "@/components/troubleshoot/site-header";
 import { SiteFooter } from "@/components/troubleshoot/site-footer";
 import { SelectedWatchPanel } from "@/components/troubleshoot/selected-watch-panel";
@@ -101,6 +101,7 @@ export default async function FixStepPage({
 
   const step = issue.steps[stepIndex];
   const instructions = interpolateInstructions(step.instructions, watch);
+  const note = interpolateOptionalText(step.note, watch);
   const visual = getStepVisual(step, watch);
   const isLast = stepIndex === issue.steps.length - 1;
   const prevHref = stepIndex > 0 ? `/troubleshooting/${watch.slug}/${issue.slug}/${issue.steps[stepIndex - 1].slug}` : null;
@@ -133,6 +134,7 @@ export default async function FixStepPage({
             stepIndex={stepIndex}
             totalSteps={issue.steps.length}
             instructions={instructions}
+            note={note}
             prevHref={prevHref}
           />
         </div>

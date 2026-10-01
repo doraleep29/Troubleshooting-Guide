@@ -14,3 +14,7 @@ export function interpolateText(text: string, watch: WatchModel): string {
 export function interpolateInstructions(instructions: string[], watch: WatchModel): string[] {
   return instructions.map((line) => interpolateText(line, watch));
 }
+
+export function interpolateOptionalText(text: string | undefined, watch: WatchModel): string | undefined {
+  return text ? interpolateText(text, watch) : undefined;
+}
