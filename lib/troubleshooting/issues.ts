@@ -135,8 +135,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     edge_armor_silver:
       "Closing wireless earbuds in their case so the phone can maintain its Bluetooth connection with an Edge Armor Silver watch.",
   },
-  setExpectationsMargin:
-    "Customer wearing an Edge Phantom Black wrist tracker while a healthcare professional takes a separate clinical measurement.",
+  setExpectationsMargin: {
+    edge_phantom_black:
+      "Customer wearing an Edge Phantom Black wrist tracker while a healthcare professional takes a separate clinical measurement.",
+    edge_armor_silver: "An Edge Armor Silver showing a heart-rate reading of 78 beside a separate monitor showing 82.",
+  },
   factoryResetAccuracy:
     "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
   avoidExcludedWaterConditions:

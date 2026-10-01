@@ -212,6 +212,9 @@ export const WATCH_MODELS: WatchModel[] = [
       // kept under its own filename so it doesn't overwrite Phantom Black's
       // existing remove-and-readd.png.
       removeReaddDevice: "/troubleshooting-diagrams/edge/remove-and-readd--armor-silver.png",
+      // Armor-Silver-specific expected-margin photo (its own case finish),
+      // distinct from Phantom Black's own setExpectationsMargin image.
+      setExpectationsMargin: "/troubleshooting-diagrams/edge/expected-margin.png",
     },
   },
   {
