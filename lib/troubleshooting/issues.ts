@@ -62,6 +62,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   pairViaApp: "Pairing with the app",
   removeReaddDevice: "Pairing with the app",
   bluetoothCallingBattery: "Bluetooth calling setup",
+  sendCloseUpVideo: "Still sticking? Send a close-up video",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -88,6 +89,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
   bluetoothCallingBattery:
     "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
+  sendCloseUpVideo:
+    "Customer recording a close-up video while pressing the yellow side button on an Edge Phantom Black watch.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -676,6 +679,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Record a short video showing the button being pressed — especially how it feels and what happens on-screen. Support reviews a video for physical button issues before proceeding with a replacement.",
         ],
+        visualSlot: "sendCloseUpVideo",
       },
     ],
   },

@@ -40,7 +40,8 @@ export type ManualVisualSlot =
   | "stillFrozenReplacement"
   | "pairViaApp"
   | "removeReaddDevice"
-  | "bluetoothCallingBattery";
+  | "bluetoothCallingBattery"
+  | "sendCloseUpVideo";
 
 export interface WatchModel {
   key: string;
@@ -159,6 +160,7 @@ export const WATCH_MODELS: WatchModel[] = [
       pairViaApp: "/troubleshooting-diagrams/edge/pair-via-app.png",
       removeReaddDevice: "/troubleshooting-diagrams/edge/remove-and-readd.png",
       bluetoothCallingBattery: "/troubleshooting-diagrams/edge/bluetooth-calling-battery.png",
+      sendCloseUpVideo: "/troubleshooting-diagrams/edge/send-close-up-video.png",
     },
   },
   {
