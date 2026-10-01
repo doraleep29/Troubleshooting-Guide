@@ -215,6 +215,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // Armor-Silver-specific expected-margin photo (its own case finish),
       // distinct from Phantom Black's own setExpectationsMargin image.
       setExpectationsMargin: "/troubleshooting-diagrams/edge/expected-margin.png",
+      // Armor-Silver-specific keep-app-running photo (its own case finish),
+      // kept under its own filename so it doesn't overwrite Phantom Black's
+      // existing keep-app-running-background.png.
+      keepAppRunningBackground: "/troubleshooting-diagrams/edge/keep-app-running-background--armor-silver.png",
     },
   },
   {

@@ -150,8 +150,12 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "Power off the Carbinox Edge, wipe around the affected button with a clean soft dry cloth, gently press and release it several times, then turn the watch on and test it.",
   resetDeviceInApp:
     "If the device is responsive, open Carbinox Max, select Device, choose Reset Device, and confirm.",
-  keepAppRunningBackground:
-    "Leave the companion app running in the background; if it is fully closed, reopen it so the Carbinox Edge can receive new notifications.",
+  keepAppRunningBackground: {
+    edge_phantom_black:
+      "Leave the companion app running in the background; if it is fully closed, reopen it so the Carbinox Edge can receive new notifications.",
+    edge_armor_silver:
+      "Leaving the companion app open in Android's recent-apps view so notifications continue reaching an Edge Armor Silver.",
+  },
   fullyChargeThenRestart:
     "Charge the Carbinox Edge to 100 percent, restart it, and observe the battery percentage over the next few hours.",
   checkFirmwareUpdateBattery:
