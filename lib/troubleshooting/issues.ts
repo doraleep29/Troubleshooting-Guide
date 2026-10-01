@@ -52,6 +52,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   settingsResetOnOwn: "If it resets on its own",
   contactSupportReplacement: "Contact support for the replacement",
   chargeAndRetryScreen: "Make sure it has enough charge",
+  otaUpdateScreen: "Check for a firmware update",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -66,6 +67,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
   },
   chargeAndRetryScreen:
     "Connect the Edge Phantom Black to its charger, charge it for 30–60 minutes, try turning it on, and test another charging location if possible.",
+  otaUpdateScreen:
+    "Open Carbinox Max, select Device, open Firmware/OTA Update, and install the latest version if available for the Edge Phantom Black.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -207,6 +210,7 @@ const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
   fullyChargeThenRestart: "chargingAlignment",
   checkFirmwareUpdateBattery: "otaUpdate",
   chargeAndRetryScreen: "chargingAlignment",
+  otaUpdateScreen: "otaUpdate",
 };
 
 // Resolves a step's visual: the selected watch's own manual crop first (each
@@ -350,7 +354,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         instructions: [
           "Open {{companionApp}} → Device → Firmware/OTA Update, and install the latest version if available — this is also recommended for screen freezing or glitching.",
         ],
-        visualSlot: "otaUpdate",
+        visualSlot: "otaUpdateScreen",
       },
       {
         slug: "reset-device",

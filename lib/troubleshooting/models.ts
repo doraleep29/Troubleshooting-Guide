@@ -34,7 +34,8 @@ export type ManualVisualSlot =
   | "turnOnBatterySaver"
   | "settingsResetOnOwn"
   | "contactSupportReplacement"
-  | "chargeAndRetryScreen";
+  | "chargeAndRetryScreen"
+  | "otaUpdateScreen";
 
 export interface WatchModel {
   key: string;
@@ -147,6 +148,7 @@ export const WATCH_MODELS: WatchModel[] = [
       settingsResetOnOwn: "/troubleshooting-diagrams/edge/settings-reset-on-own.png",
       contactSupportReplacement: "/troubleshooting-diagrams/edge/contact-support-replacement.png",
       chargeAndRetryScreen: "/troubleshooting-diagrams/edge/charge-and-retry.png",
+      otaUpdateScreen: "/troubleshooting-diagrams/edge/firmware-update.png",
     },
   },
   {
