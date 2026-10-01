@@ -96,8 +96,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     // Silver's brushed-steel look that isn't what's actually pictured.
     edge_armor_silver: "Customer recording a close-up video while pressing the yellow side button on an Edge watch.",
   },
-  powerSource:
-    "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
+  powerSource: {
+    edge_phantom_black:
+      "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
+    edge_armor_silver: "Testing the Edge Armor Silver charging cable with a laptop USB port after disconnecting it from a wall adapter.",
+  },
   forceBootWhileCharging:
     "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
   checkProximityBackgroundApp: {

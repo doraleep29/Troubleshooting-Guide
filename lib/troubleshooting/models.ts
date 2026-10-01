@@ -182,6 +182,9 @@ export const WATCH_MODELS: WatchModel[] = [
       // shows the generic act of recording the button, not a color-specific
       // case finish, so it's intentionally shared rather than duplicated.
       sendCloseUpVideo: "/troubleshooting-diagrams/edge/send-close-up-video.png",
+      // Armor-Silver-specific power-source photo (its own case finish),
+      // distinct from Phantom Black's own powerSource image.
+      powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source.png",
     },
   },
   {
