@@ -196,6 +196,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // Armor-Silver-specific clear-app-data photo (its own case finish),
       // distinct from Phantom Black's own clearAppDataRepair image.
       clearAppDataRepair: "/troubleshooting-diagrams/edge/clear-app-data-repair.png",
+      // Armor-Silver-specific replacement photo (its own case finish), kept
+      // under its own filename so it doesn't overwrite Phantom Black's
+      // existing still-frozen-replacement.png.
+      stillFrozenReplacement: "/troubleshooting-diagrams/edge/still-frozen-replacement--armor-silver.png",
     },
   },
   {

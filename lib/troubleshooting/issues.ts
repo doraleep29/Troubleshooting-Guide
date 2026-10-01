@@ -89,8 +89,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     edge_phantom_black: "Phone clearing app data beside an Edge Phantom Black watch displaying Bluetooth pairing mode.",
     edge_armor_silver: "Clearing an app's stored data from Android settings with an Edge Armor Silver watch ready to reconnect.",
   },
-  stillFrozenReplacement:
-    "An unresponsive Edge Phantom Black watch with a black screen being packed for return beside a working replacement watch.",
+  stillFrozenReplacement: {
+    edge_phantom_black:
+      "An unresponsive Edge Phantom Black watch with a black screen being packed for return beside a working replacement watch.",
+    edge_armor_silver: "A black-screen Edge Armor Silver beside a working replacement Edge Armor Silver.",
+  },
   pairViaApp:
     "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
   removeReaddDevice:
