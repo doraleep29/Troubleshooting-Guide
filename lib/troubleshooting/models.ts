@@ -190,6 +190,9 @@ export const WATCH_MODELS: WatchModel[] = [
       // screen plus the watch's update progress, not a color-specific case
       // finish, so it's intentionally shared rather than duplicated.
       otaUpdateScreen: "/troubleshooting-diagrams/edge/firmware-update.png",
+      // Same reset-device asset as Phantom Black — a generic companion-app
+      // screen, not a color-specific case finish.
+      resetDeviceInApp: "/troubleshooting-diagrams/edge/reset-device-in-app.png",
     },
   },
   {
