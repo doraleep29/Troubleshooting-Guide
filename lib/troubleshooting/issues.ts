@@ -94,7 +94,7 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
   removeBluetoothCompetition:
     "Disconnect other Bluetooth devices, check the phone's battery, and reconnect the Carbinox Edge.",
   setExpectationsMargin:
-    "A Carbinox Edge wrist tracker may show a 5–15 percent margin compared with a medical device, which does not necessarily indicate a defect.",
+    "Customer wearing an Edge Phantom Black wrist tracker while a healthcare professional takes a separate clinical measurement.",
   factoryResetAccuracy:
     "Reset the Carbinox Edge to factory settings and set up the watch again if the accuracy issue persists.",
   avoidExcludedWaterConditions:
