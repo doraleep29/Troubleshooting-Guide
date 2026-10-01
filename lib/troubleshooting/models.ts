@@ -185,6 +185,7 @@ export const WATCH_MODELS: WatchModel[] = [
       // Armor-Silver-specific power-source photo (its own case finish),
       // distinct from Phantom Black's own powerSource image.
       powerSource: "/troubleshooting-diagrams/edge/rule-out-power-source.png",
+      forceBootWhileCharging: "/troubleshooting-diagrams/edge/boot-while-charging.png",
     },
   },
   {

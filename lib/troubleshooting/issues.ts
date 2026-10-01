@@ -101,8 +101,12 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
     edge_armor_silver: "Testing the Edge Armor Silver charging cable with a laptop USB port after disconnecting it from a wall adapter.",
   },
-  forceBootWhileCharging:
-    "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
+  forceBootWhileCharging: {
+    edge_phantom_black:
+      "Clean the magnetic contacts, charge the Carbinox Edge for 30–60 minutes, then hold Power/SEL for 30–40 seconds while it remains connected.",
+    edge_armor_silver:
+      "Pressing and holding the yellow power button on an Edge Armor Silver while the watch remains connected to a laptop USB charger.",
+  },
   checkProximityBackgroundApp: {
     edge_phantom_black:
       "Keep the Carbinox Edge and phone within 10 meters, allow the companion app to run in the background, and re-pair if disconnected.",
