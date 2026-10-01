@@ -59,6 +59,10 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
 // with separate Phantom Black and Armor Silver assets) keys its override by
 // watch.key instead of a single string.
 const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Record<string, string>>>> = {
+  restart: {
+    edge_phantom_black:
+      "Press and hold the yellow SEL button on the Edge Phantom Black for 3 seconds to power the watch on or off.",
+  },
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
