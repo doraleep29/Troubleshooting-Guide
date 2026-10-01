@@ -37,7 +37,8 @@ export type ManualVisualSlot =
   | "chargeAndRetryScreen"
   | "otaUpdateScreen"
   | "clearAppDataRepair"
-  | "stillFrozenReplacement";
+  | "stillFrozenReplacement"
+  | "pairViaApp";
 
 export interface WatchModel {
   key: string;
@@ -153,6 +154,7 @@ export const WATCH_MODELS: WatchModel[] = [
       otaUpdateScreen: "/troubleshooting-diagrams/edge/firmware-update.png",
       clearAppDataRepair: "/troubleshooting-diagrams/edge/clear-app-data-and-repair.png",
       stillFrozenReplacement: "/troubleshooting-diagrams/edge/still-frozen-replacement.png",
+      pairViaApp: "/troubleshooting-diagrams/edge/pair-via-app.png",
     },
   },
   {
