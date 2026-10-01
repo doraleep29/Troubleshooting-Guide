@@ -38,7 +38,8 @@ export type ManualVisualSlot =
   | "otaUpdateScreen"
   | "clearAppDataRepair"
   | "stillFrozenReplacement"
-  | "pairViaApp";
+  | "pairViaApp"
+  | "removeReaddDevice";
 
 export interface WatchModel {
   key: string;
@@ -155,6 +156,7 @@ export const WATCH_MODELS: WatchModel[] = [
       clearAppDataRepair: "/troubleshooting-diagrams/edge/clear-app-data-and-repair.png",
       stillFrozenReplacement: "/troubleshooting-diagrams/edge/still-frozen-replacement.png",
       pairViaApp: "/troubleshooting-diagrams/edge/pair-via-app.png",
+      removeReaddDevice: "/troubleshooting-diagrams/edge/remove-and-readd.png",
     },
   },
   {

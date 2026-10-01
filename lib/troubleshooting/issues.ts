@@ -56,6 +56,7 @@ export const VISUAL_TITLES: Record<ManualVisualSlot, string> = {
   clearAppDataRepair: "Clear the app data and re-pair",
   stillFrozenReplacement: "If it's still frozen or blacked out",
   pairViaApp: "Pairing with the app",
+  removeReaddDevice: "Pairing with the app",
 };
 
 // Exact alt text required for a specific slot, overriding the generated
@@ -78,6 +79,8 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "An unresponsive Edge Phantom Black watch with a black screen being packed for return beside a working replacement watch.",
   pairViaApp:
     "User pairing an Edge Phantom Black watch through the app by scanning the QR code displayed on the watch.",
+  removeReaddDevice:
+    "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:
@@ -221,6 +224,7 @@ const SLOT_FALLBACKS: Partial<Record<ManualVisualSlot, ManualVisualSlot>> = {
   chargeAndRetryScreen: "chargingAlignment",
   otaUpdateScreen: "otaUpdate",
   pairViaApp: "pairingApp",
+  removeReaddDevice: "pairingApp",
 };
 
 // Resolves a step's visual: the selected watch's own manual crop first (each
@@ -431,7 +435,7 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "Re-pair",
         title: "Remove and re-add the device",
         instructions: ["In the app, remove the watch from My Devices, then add it again as if pairing for the first time."],
-        visualSlot: "pairingApp",
+        visualSlot: "removeReaddDevice",
       },
     ],
   },
