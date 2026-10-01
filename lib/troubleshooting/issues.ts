@@ -89,8 +89,13 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
     "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
   bluetoothCallingBattery:
     "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
-  sendCloseUpVideo:
-    "Customer recording a close-up video while pressing the yellow side button on an Edge Phantom Black watch.",
+  sendCloseUpVideo: {
+    edge_phantom_black: "Customer recording a close-up video while pressing the yellow side button on an Edge Phantom Black watch.",
+    // Reuses the Phantom Black photo, which shows that case's dark finish —
+    // so the alt text stays color-neutral rather than claiming Armor
+    // Silver's brushed-steel look that isn't what's actually pictured.
+    edge_armor_silver: "Customer recording a close-up video while pressing the yellow side button on an Edge watch.",
+  },
   powerSource:
     "Recommended low-power charging sources and a warning against 20W+ USB-C PD fast chargers for the Carbinox Edge",
   forceBootWhileCharging:

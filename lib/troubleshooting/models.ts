@@ -178,6 +178,10 @@ export const WATCH_MODELS: WatchModel[] = [
     manualVisuals: {
       ...EDGE_SHARED.manualVisuals,
       checkProximityBackgroundApp: "/troubleshooting-diagrams/edge-armor-silver/check-proximity-background-app.png",
+      // Same close-up-video asset as Phantom Black — the customer-asked video
+      // shows the generic act of recording the button, not a color-specific
+      // case finish, so it's intentionally shared rather than duplicated.
+      sendCloseUpVideo: "/troubleshooting-diagrams/edge/send-close-up-video.png",
     },
   },
   {
