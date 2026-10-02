@@ -95,7 +95,7 @@ function ChooseYourWatchPanel() {
         ←
       </span>
       <aside
-        className="h-fit overflow-hidden rounded-xl border border-[var(--support-accent)] bg-[var(--support-panel)] p-6"
+        className="h-fit rounded-xl border border-[var(--support-accent)] bg-[var(--support-panel)] p-6 pb-5"
         style={{ boxShadow: "0 0 26px rgba(245, 180, 0, 0.16)" }}
       >
         <div className="support-display text-xl text-white">Choose your watch</div>
@@ -115,18 +115,15 @@ function ChooseYourWatchPanel() {
           ))}
         </div>
 
-        <div className="relative mt-1 h-[80px] sm:h-[130px]" aria-hidden="true">
+        <div className="relative mt-3 flex h-[150px] items-center justify-center sm:h-[170px]" aria-hidden="true">
           <div
-            className="pointer-events-none absolute -right-8 bottom-[-18px] h-[130px] w-[160px] rounded-full blur-2xl sm:h-[170px] sm:w-[210px]"
+            className="pointer-events-none absolute h-[120px] w-[120px] rounded-full blur-2xl sm:h-[140px] sm:w-[140px]"
             style={{ background: "var(--support-accent)", opacity: 0.22 }}
           />
-          <div className="pointer-events-none absolute -right-6 bottom-[-14px] h-[110px] w-[150px] sm:h-[160px] sm:w-[200px]">
-            <Image src="/watches/edge-armor-silver.png" alt="" fill className="object-contain object-bottom" sizes="200px" />
+          <div className="relative h-full w-full">
+            <Image src="/watches/edge-armor-silver.png" alt="" fill className="object-contain" sizes="260px" />
           </div>
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-8 bg-gradient-to-b from-[var(--support-panel)] to-transparent" />
         </div>
-
-        <p className="mt-2 text-center text-[11px] text-[var(--support-ink-dim)]">You can change your watch anytime.</p>
       </aside>
     </div>
   );
