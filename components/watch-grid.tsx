@@ -95,7 +95,7 @@ function ChooseYourWatchPanel() {
         ←
       </span>
       <aside
-        className="h-fit rounded-xl border border-[var(--support-accent)] bg-[var(--support-panel)] p-6 pb-5"
+        className="h-fit overflow-hidden rounded-xl border border-[var(--support-accent)] bg-[var(--support-panel)] p-5"
         style={{ boxShadow: "0 0 26px rgba(245, 180, 0, 0.16)" }}
       >
         <div className="support-display text-xl text-white">Choose your watch</div>
@@ -103,9 +103,9 @@ function ChooseYourWatchPanel() {
           Select the model that looks closest to yours.
         </p>
 
-        <div className="mt-4">
+        <div className="mt-3">
           {GUIDANCE_ROWS.map(({ Icon, title, description }, i) => (
-            <div key={title} className={`flex items-start gap-3 py-3.5 ${i > 0 ? "border-t border-[var(--support-line)]" : ""}`}>
+            <div key={title} className={`flex items-start gap-3 py-2.5 ${i > 0 ? "border-t border-[var(--support-line)]" : ""}`}>
               <Icon />
               <div>
                 <div className="text-[11.5px] font-bold uppercase tracking-wide text-[var(--support-accent)]">{title}</div>
@@ -115,14 +115,19 @@ function ChooseYourWatchPanel() {
           ))}
         </div>
 
-        <div className="relative mt-3 flex h-[150px] items-center justify-center sm:h-[170px]" aria-hidden="true">
+        <div className="relative -mx-5 -mb-5 mt-3 h-[110px] overflow-hidden" aria-hidden="true">
           <div
-            className="pointer-events-none absolute h-[120px] w-[120px] rounded-full blur-2xl sm:h-[140px] sm:w-[140px]"
-            style={{ background: "var(--support-accent)", opacity: 0.22 }}
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[130px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
+            style={{ background: "var(--support-accent)", opacity: 0.25 }}
           />
-          <div className="relative h-full w-full">
-            <Image src="/watches/edge-armor-silver.png" alt="" fill className="object-contain" sizes="260px" />
-          </div>
+          <Image
+            src="/watches/edge-armor-silver.png"
+            alt=""
+            fill
+            className="object-cover"
+            style={{ objectPosition: "50% 72%" }}
+            sizes="400px"
+          />
         </div>
       </aside>
     </div>
