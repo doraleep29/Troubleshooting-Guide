@@ -171,8 +171,11 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "Reduce the Carbinox Edge screen brightness and turn off notifications that are not needed to help reduce daily battery drain.",
     edge_armor_silver: "Reducing screen brightness on a Carbinox Edge Armor Silver smartwatch",
   },
-  turnOnBatterySaver:
-    "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
+  turnOnBatterySaver: {
+    edge_phantom_black:
+      "Enable the built-in battery-saving mode on the Carbinox Edge from either the watch or the companion app.",
+    edge_armor_silver: "Enabling battery-saving mode on a Carbinox Edge Armor Silver smartwatch",
+  },
   settingsResetOnOwn:
     "If Bluetooth or the phone network disconnects, reconnect the phone and Carbinox Edge and then reapply the time, distance and temperature settings.",
   contactSupportReplacement:

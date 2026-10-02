@@ -230,6 +230,10 @@ export const WATCH_MODELS: WatchModel[] = [
       // kept under its own filename so it doesn't overwrite Phantom Black's
       // existing lower-screen-brightness.png.
       lowerScreenBrightness: "/troubleshooting-diagrams/edge/lower-screen-brightness--armor-silver.png",
+      // Armor-Silver-specific battery-saver photo (its own case finish),
+      // kept under its own filename so it doesn't overwrite Phantom Black's
+      // existing turn-on-battery-saver.png.
+      turnOnBatterySaver: "/troubleshooting-diagrams/edge/turn-on-battery-saver--armor-silver.png",
     },
   },
   {
