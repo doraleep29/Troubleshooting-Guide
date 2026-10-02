@@ -104,8 +104,12 @@ const VISUAL_ALT_OVERRIDES: Partial<Record<ManualVisualSlot, string | Partial<Re
       "Phone showing Device Removed and Add Device beside an Edge Phantom Black watch displaying its pairing QR code.",
     edge_armor_silver: "Removing and re-adding an Edge Armor Silver through the companion app's device controls.",
   },
-  bluetoothCallingBattery:
-    "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
+  bluetoothCallingBattery: {
+    edge_phantom_black:
+      "Customer taking a Bluetooth call through an Edge Phantom Black watch displaying an active call and reduced battery.",
+    edge_armor_silver:
+      "Disabling Bluetooth calling between a phone and a Carbinox Edge Armor Silver to conserve battery",
+  },
   sendCloseUpVideo: {
     edge_phantom_black: "Customer recording a close-up video while pressing the yellow side button on an Edge Phantom Black watch.",
     // Reuses the Phantom Black photo, which shows that case's dark finish —

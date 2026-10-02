@@ -234,6 +234,11 @@ export const WATCH_MODELS: WatchModel[] = [
       // kept under its own filename so it doesn't overwrite Phantom Black's
       // existing turn-on-battery-saver.png.
       turnOnBatterySaver: "/troubleshooting-diagrams/edge/turn-on-battery-saver--armor-silver.png",
+      // Armor-Silver-specific Bluetooth-calling photo, so this step stops
+      // falling back to the shared raw manual crop at
+      // manuals/edge/bluetooth-calling.png (left in place — still used as
+      // the fallback for other models/steps).
+      bluetoothCallingBattery: "/troubleshooting-diagrams/edge/check-bluetooth-calling-usage--armor-silver.png",
     },
   },
   {
