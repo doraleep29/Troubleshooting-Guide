@@ -95,7 +95,7 @@ function ChooseYourWatchPanel() {
         ←
       </span>
       <aside
-        className="h-fit overflow-hidden rounded-xl border border-[var(--support-accent)] bg-[var(--support-panel)] p-6"
+        className="relative h-fit overflow-hidden rounded-xl border-2 border-[var(--support-accent)] bg-[var(--support-panel)] px-6 pt-6"
         style={{ boxShadow: "0 0 26px rgba(245, 180, 0, 0.16)" }}
       >
         <div className="support-display text-xl text-white">Choose your watch</div>
@@ -115,12 +115,18 @@ function ChooseYourWatchPanel() {
           ))}
         </div>
 
-        <div className="relative -mx-6 -mb-6 mt-4" style={{ aspectRatio: "410 / 265" }} aria-hidden="true">
+        <div className="relative mt-4 h-[167px] sm:h-[205px] lg:h-[231px]" aria-hidden="true">
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[75%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[80%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
             style={{ background: "var(--support-accent)", opacity: 0.25 }}
           />
-          <Image src="/watches/edge-armor-silver-closeup.png" alt="" fill className="object-cover" sizes="410px" />
+          <Image
+            src="/watches/edge-armor-silver-centered-transparent.png"
+            alt=""
+            width={1566}
+            height={1004}
+            className="absolute bottom-0 left-1/2 h-auto w-[260px] -translate-x-1/2 object-contain sm:w-[320px] lg:w-[360px]"
+          />
         </div>
       </aside>
     </div>
