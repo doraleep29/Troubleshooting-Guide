@@ -524,7 +524,9 @@ export const ISSUES: TroubleshootingIssue[] = [
         shortLabel: "App permissions",
         title: "Check notification permissions in the app",
         instructions: [
-          "Confirm the specific app (e.g. WhatsApp) is toggled on under notification settings, and location + notification permissions are granted on the phone.",
+          "Open {{companionApp}} → Device → Notification and Reminder → App Notification, and make sure the specific app you're missing notifications from (e.g. WhatsApp) has its own toggle turned on — the \"All App Notifications\" master switch being on doesn't automatically turn on every individual app.",
+          "Also confirm the phone's own notification and location permissions are granted to {{companionApp}} in the phone's system settings.",
+          "On iPhone: Settings → Bluetooth → the (i) next to the watch, and make sure \"Show Message Notifications\" and \"Share System Notifications\" are both on, and that Settings → {{companionApp}} → Background App Refresh is on.",
         ],
       },
       {
